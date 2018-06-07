@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-/**
+/** s
  * Community Auth - MY Controller
  *
  * Community Auth is an open source authentication application for CodeIgniter 3
@@ -18,7 +18,7 @@ require_once APPPATH . 'third_party/auth/core/Auth_Controller.php';
 class MY_Controller extends Auth_Controller
 {
 	/**
-	 * Class constructor
+	 * Class constructor 
 	 */
 
 	public function __construct()

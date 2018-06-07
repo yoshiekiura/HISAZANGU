@@ -42,7 +42,7 @@
     <!-- CORE CSS TEMPLATE - END -->
 
 </head>
-<!-- END HEAD -->
+<!-- END HEAD --> 
 
 <!-- BEGIN BODY -->
 
@@ -180,8 +180,8 @@ if( isset( $show_form ) )
                 </div>
 
                 <p id="nav">
-                    <a class="pull-left" href="<?php echo base_url(LOGIN_PAGE)?>" title="Sign Up">Login</a>
-                    <a class="pull-right" href="<?php echo base_url('app/register')?>" title="Sign Up">Sign Up</a>
+                    <a class="pull-left" href="<?php echo base_url(LOGIN_PAGE)?>" title="Signin">Login</a>
+                    <a class="pull-right" href="<?php echo base_url('app/register')?>" title="Register">Register</a>
                 </p>
 
             </div>

@@ -1,48 +1,3 @@
-<!DOCTYPE html>
-
-
-<head>
-    <!-- 
-        * @Package: Cryptonia - Bitcoin & Cryptocurrency trading Dashboard
-        * @Version: 1.0.0
-    -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title><?php echo (!empty($title))? $title: 'Sarah | Register'; ?></title>
-    <meta content="" name="description" />
-    <meta content="" name="author" />
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="<?php echo base_url();?>public/images/favicon.png" type="image/x-icon" />
-    <!-- For iPhone -->
-    <link rel="apple-touch-icon-precomposed" href="<?php echo base_url();?>public/images/apple-touch-icon-57-precomposed.png">
-    <!-- For iPhone 4 Retina display -->
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo base_url();?>public/images/apple-touch-icon-114-precomposed.png">
-    <!-- For iPad -->
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo base_url();?>public/images/apple-touch-icon-72-precomposed.png">
-    <!-- For iPad Retina display -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo base_url();?>public/images/apple-touch-icon-144-precomposed.png">
-
-    <!-- CORE CSS FRAMEWORK - START -->
-    <link href="<?php echo base_url();?>public/plugins/pace/pace-theme-flash.css" rel="stylesheet" type="text/css" media="screen" />
-    <link href="<?php echo base_url();?>public/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="<?php echo base_url();?>public/plugins/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
-    <link href="<?php echo base_url();?>public/fonts/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
-    <link href="<?php echo base_url();?>public/css/animate.min.css" rel="stylesheet" type="text/css" />
-    <link href="<?php echo base_url();?>public/plugins/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" type="text/css" />
-    <!-- CORE CSS FRAMEWORK - END -->
-
-    <!-- HEADER SCRIPTS INCLUDED ON THIS PAGE - START -->
-
-    <!-- HEADER SCRIPTS INCLUDED ON THIS PAGE - END -->
-
-    <!-- CORE CSS TEMPLATE - START -->
-    <link href="<?php echo base_url();?>public/css/style.css" rel="stylesheet" type="text/css" />
-    <link href="<?php echo base_url();?>public/css/responsive.css" rel="stylesheet" type="text/css" />
-    <!-- CORE CSS TEMPLATE - END -->
-
-</head>
-<!-- END HEAD -->
 
 <!-- BEGIN BODY -->
 
@@ -53,7 +8,7 @@
         <div class="login-wrapper row">
             <div id="login" class="login loginpage col-lg-offset-2 col-md-offset-3 col-sm-offset-3 col-xs-offset-0 col-xs-12 col-sm-6 col-lg-8">    
                 <div class="login-form-header">
-                     <img src="<?php echo base_url();?>public/data/icons/signup.png" alt="login-icon" style="max-width:64px">
+                     <img src="<?php echo base_url();?>resources/data/icons/signup.png" alt="login-icon" style="max-width:64px">
                      <div class="login-header">
                          <h4 class="bold color-white">Signup Now!</h4>
                          <h4><small>Please enter your data to register.</small></h4>
@@ -255,32 +210,4 @@
     <!-- MAIN CONTENT AREA ENDS -->
    
 </div>    
-
-
-
-    <!-- MAIN CONTENT AREA ENDS -->
-    <!-- LOAD FILES AT PAGE END FOR FASTER LOADING -->
-
-    <!-- CORE JS FRAMEWORK - START -->
-    <script src="<?php echo base_url();?>public/js/jquery-1.11.2.min.js"></script>
-    <script src="<?php echo base_url();?>public/js/jquery.easing.min.js"></script>
-    <script src="<?php echo base_url();?>public/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script src="<?php echo base_url();?>public/plugins/pace/pace.min.js"></script>
-    <script src="<?php echo base_url();?>public/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-    <script src="<?php echo base_url();?>public/plugins/viewport/viewportchecker.js"></script>
-    <script>
-        window.jQuery || document.write('<script src="<?php echo base_url();?>public/js/jquery-1.11.2.min.js"><\/script>');
-    </script>
-    <!-- CORE JS FRAMEWORK - END -->
-
-    <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - START -->
-
-    <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - END -->
-
-    <!-- CORE TEMPLATE JS - START -->
-    <script src="<?php echo base_url();?>public/js/scripts.js"></script>
-    <!-- END CORE TEMPLATE JS - END -->
-
-</body>
-</html>
 

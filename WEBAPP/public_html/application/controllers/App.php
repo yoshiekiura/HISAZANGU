@@ -33,10 +33,17 @@ class App extends My_Controller
 			$this->require_min_level(1);
 
 		$this->setup_login_form();
-
+                $this->load->view('auth/header');
 		$this->load->view('auth/login');
+                $this->load->view('auth/footer');
 	}
         
+       public function register()
+	{
+            $this->load->view('auth/header');
+            $this->load->view('auth/register');
+            $this->load->view('auth/footer');
+	}
         
         public function recover()
 	{
@@ -94,8 +101,8 @@ class App extends My_Controller
 
 						$this->load->library('email');
 
-                                                $this->email->from('info@softwaretz.com', 'Sarah');
-                                                $this->email->to('sarah@softwaretz.com');
+                                                $this->email->from('support@hisazangu.co.tz', 'Support Team');
+                                                $this->email->to($user_data->email);
                                                 
                                                 $this->email->subject('Account Recovery');
                                                 $this->email->message('Click this link '.$link_uri);
@@ -118,9 +125,9 @@ class App extends My_Controller
 		}
 
 		
-
+            $this->load->view('auth/header');
             $this->load->view('auth/recover_form', ( isset( $view_data ) ) ? $view_data : '');
-
+            $this->load->view('auth/footer');
 		
 	}
         
@@ -193,76 +200,11 @@ class App extends My_Controller
 				$this->app_model->recovery_password_change();
 			}
 		}
-
+                $this->load->view('auth/header');
 		$this->load->view('auth/choose_password_form', $view_data);
+                $this->load->view('auth/footer');
 	}
-        
-        
-        public function create_user()
-	{
-		$this->is_logged_in();
-                $this->load->view('auth/register');
 
-		// Load resources
-		$this->load->helper('auth');
-		$this->load->model('auth/app_model');
-		$this->load->model('app/validation_callables');
-		$this->load->library('form_validation');
-
-		$this->form_validation->set_data( $user_data );
-
-		$validation_rules = [
-			[
-				'field' => 'username',
-				'label' => 'username',
-				'rules' => 'max_length[12]|is_unique[' . db_table('user_table') . '.username]',
-				'errors' => [
-					'is_unique' => 'Username already in use.'
-				]
-			],
-			[
-				'field' => 'passwd',
-				'label' => 'passwd',
-				'rules' => [
-					'trim',
-					'required',
-					[ 
-						'_check_password_strength', 
-						[ $this->validation_callables, '_check_password_strength' ] 
-					]
-				],
-				'errors' => [
-					'required' => 'The password field is required.'
-				]
-			],
-			[
-				'field'  => 'email',
-				'label'  => 'email',
-				'rules'  => 'trim|required|valid_email|is_unique[' . db_table('user_table') . '.email]',
-				'errors' => [
-					'is_unique' => 'Email address already in use.'
-				]
-			],
-			[
-				'field' => 'auth_level',
-				'label' => 'auth_level',
-				'rules' => 'required|integer|in_list[1,6,7,8,9]'
-			]
-		];
-
-		$this->form_validation->set_rules( $validation_rules );
-
-		if( $this->form_validation->run() )
-		{
-			$user_data['passwd']     = $this->authentication->hash_passwd($user_data['passwd']);
-			$user_data['user_id']    = $this->app_model->get_unused_id();
-			$user_data['created_at'] = date('Y-m-d H:i:s');
-
-                }
-		
-	}
-        
-        
         
         public function logout()
 	{
