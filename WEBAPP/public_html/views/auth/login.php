@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+
 
 <head>
     <!-- 
@@ -8,7 +8,7 @@
     -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title><?php echo $title;?></title>
+    <title><?php echo (!empty($title))? $title: 'Sarah | Login'; ?></title>
     <meta content="" name="description" />
     <meta content="" name="author" />
 
@@ -61,40 +61,101 @@
                
                 <div class="box login">
 
-                    <div class="content-body" style="padding-top:30px">
+               <div class="content-body" style="padding-top:30px">
+                   
+<?php
 
-                        <?php $attr= array('method'=>'post','id'=>'msg-validate','class'=>'no-mb no-mt'); echo form_open('',$attr);?>
-                            <div class="row">
-                                <div class="col-xs-12">
+if( ! isset( $on_hold_message ) )
+{
+	if( isset( $login_error_mesg ) )
+	{
+		echo '
+			<div class="alert alert-danger">
+				<p>
+					Invalid Username, Email Address, or Password.
+				</p>
+				
+			</div>
+		';
+	}
 
-                                    <div class="form-group">
-                                        <label class="form-label">Email</label>
-                                        <div class="controls">
-                                            <input required type="email" class="form-control" name="login_name" placeholder="email">
-                                        </div>
-                                    </div>
 
-                                    <div class="form-group">
-                                        <label class="form-label">Password</label>
-                                        <div class="controls">
-                                            <input required type="password" class="form-control" name="password" placeholder="password">
-                                        </div>
-                                    </div>
+	echo form_open( $login_url, ['class' => 'std-form'] ); 
+?>
 
-                                    <div class="pull-left">
-                                        <button type="submit" class="btn btn-primary mt-10 btn-corner right-15">Log in</button>
-                                        <a href="<?php echo base_url('app/register');?>" class="btn mt-10 btn-corner signup">Sign up</a>
-                                    </div>
+	<div>
 
-                                </div>
-                            </div>
-                        <?php echo form_close();?>
-                    </div>
+		<label for="login_string" class="form_label">Username or Email</label>
+		<input type="text" name="login_string" id="login_string" class="form_input" autocomplete="off" maxlength="255" />
+
+		<br />
+
+		<label for="login_pass" class="form_label">Password</label>
+		<input type="password" name="login_pass" id="login_pass" class="form_input password" <?php 
+			if( config_item('max_chars_for_password') > 0 )
+				echo 'maxlength="' . config_item('max_chars_for_password') . '"'; 
+		?> autocomplete="off" readonly="readonly" onfocus="this.removeAttribute('readonly');" />
+
+
+		<?php
+			if( config_item('allow_remember_me') )
+			{
+		?>
+
+			<br />
+
+			<label for="remember_me" class="form_label">Remember Me</label>
+			<input type="checkbox" id="remember_me" name="remember_me" value="yes" />
+
+		<?php
+			}
+		?>
+
+		<p>
+			<?php
+				$link_protocol = USE_SSL ? 'https' : NULL;
+			?>
+                    <a style="color: orange" href="<?php echo site_url('app/recover', $link_protocol); ?>">
+				Can't access your account?
+			</a>
+		</p>
+                <button type="submit" class="btn btn-primary" name="submit" id="submit_button">Login</button>
+
+	</div>
+</form>
+
+<?php
+
+	}
+	else
+	{
+		// EXCESSIVE LOGIN ATTEMPTS ERROR MESSAGE
+		echo '
+			<div style="border:1px solid red;">
+				<p>
+					Excessive Login Attempts
+				</p>
+				<p>
+					You have exceeded the maximum number of failed login<br />
+					attempts that this website will allow.
+				<p>
+				<p>
+					Your access to login and account recovery has been blocked for ' . ( (int) config_item('seconds_on_hold') / 60 ) . ' minutes.
+				</p>
+				<p>
+					Please use the <a href="/examples/recover">Account Recovery</a> after ' . ( (int) config_item('seconds_on_hold') / 60 ) . ' minutes has passed,<br />
+					or contact us if you require assistance gaining access to your account.
+				</p>
+			</div>
+		';
+	}
+?>
+                   </div>
                 </div>
 
                 <p id="nav">
-                    <a class="pull-left" href="<?php echo base_url('app/recover');?>" title="Password Lost and Found">Forgot password?</a>
-                    <a class="pull-right" href="<?php echo base_url('app/register');?>" title="Sign Up">Sign Up</a>
+                    <a class="pull-left" href="<?php echo base_url('app/recover')?>" title="Password Lost and Found">Forgot password?</a>
+                    <a class="pull-right" href="<?php echo base_url('app/create_user')?>" title="Sign Up">Sign Up</a>
                 </p>
 
             </div>
@@ -125,5 +186,5 @@
     <!-- END CORE TEMPLATE JS - END -->
 
 </body>
-
 </html>
+

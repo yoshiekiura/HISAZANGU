@@ -28,11 +28,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 $config['levels_and_roles'] = [
-	'1' => 'client',
-        '6' => 'brockerofficer',
-	'7' => 'brockeradmin',
-        '8' => 'officer',
-	'9' => 'admin'
+	'1' => 'customer',
+        '6' => 'client',
+        '7' => 'brocker',
+	'8' => 'admin',
+	'9' => 'system'
 ];
 
 /*
@@ -44,10 +44,9 @@ $config['levels_and_roles'] = [
 */
 
 $config['groups'] = [
-        'clients' => 'client',
-	'brockers' => 'brockeradmin,brockerofficer',
-        'system' => 'badmin,officer'
+	'admin' => 'admin,system'
 ];
+
 
 /*
 | -----------------------------------------------------------------

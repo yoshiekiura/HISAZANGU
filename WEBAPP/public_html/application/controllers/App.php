@@ -1,74 +1,47 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-
-class App extends MY_Controller
+   
+class App extends My_Controller
 {
-	public function __construct()
-	{
-		parent::__construct();
 
-                $this->force_ssl();
+    public function __construct()
+    {
+        parent:: __construct();
+      
+    }
+    
+    
+    public function index()
+    {
+      if($this->require_min_level(1))
+      {
+       redirect(base_url($this->auth_role.'/dashboard'));
+      }
+      else{
+          $this->logout();
+      }
+    }
 
-	}
-
-	
-	public function index()
-	{
-		if( $this->require_min_level(1))
-		{       
-                        $redirect_protocol = USE_SSL ? 'https' : NULL;
-
-                        redirect( base_url($this->auth_role.'/dashboard'), $redirect_protocol );
-                        
-		}
-	}
-	
-        public function changeproject($key) {
-            $this->session->project = $this->my_auth_model->get_project_data($key);
-             
-                header("Location: " . base_url('admin/projects/project/'.$key));
-        }
-        
-	public function login()
+    
+    public function login()
 	{
 		// Method should not be directly accessible
 		if( $this->uri->uri_string() == 'app/login')
-                    return;
+			show_404();
 
 		if( strtolower( $_SERVER['REQUEST_METHOD'] ) == 'post' )
 			$this->require_min_level(1);
 
 		$this->setup_login_form();
-                
-                $pagedata = array('title'=>'Login | Hisazangu');
-                $this->load->vars($pagedata);
+
 		$this->load->view('auth/login');
 	}
-
-	// --------------------------------------------------------------
-
-	/**
-	 * Log out
-	 */
-	public function logout()
-	{
-		$this->authentication->logout();
-
-		// Set redirect protocol
-		$redirect_protocol = USE_SSL ? 'https' : NULL;
-
-		redirect( site_url( LOGIN_PAGE . '?' . AUTH_LOGOUT_PARAM . '=1', $redirect_protocol ) );
-	}
-
-	// --------------------------------------------------------------
-
-	/**
-	 * User recovery form
-	 */
-	public function recover()
+        
+        
+        public function recover()
 	{
 		// Load resources
-		$this->load->model('auth/auth_model');
+		$this->load->model('auth/app_model');
 
 		/// If IP or posted email is on hold, display message
 		if( $on_hold = $this->authentication->current_hold_status( TRUE ) )
@@ -80,7 +53,7 @@ class App extends MY_Controller
 			// If the form post looks good
 			if( $this->tokens->match && $this->input->post('email') )
 			{
-				if( $user_data = $this->auth_model->get_recovery_data( $this->input->post('email') ) )
+				if( $user_data = $this->app_model->get_recovery_data( $this->input->post('email') ) )
 				{
 					// Check if user is banned
 					if( $user_data->banned == '1' )
@@ -105,7 +78,7 @@ class App extends MY_Controller
 							. $this->authentication->random_salt(), 0, 72 );
 
 						// Update user record with recovery code and time
-						$this->auth_model->update_user_raw_data(
+						$this->app_model->update_user_raw_data(
 							$user_data->user_id,
 							[
 								'passwd_recovery_code' => $this->authentication->hash_passwd($recovery_code),
@@ -117,13 +90,17 @@ class App extends MY_Controller
 						$link_protocol = USE_SSL ? 'https' : NULL;
 
 						// Set URI of link
-						$link_uri = 'auth/recovery_verification/' . $user_data->user_id . '/' . $recovery_code;
+						$link_uri = '<a href="'.base_url().'app/recovery_verification/' . $user_data->user_id . '/' . $recovery_code.'">Recover</a>';
 
-						$view_data['special_link'] = anchor( 
-							site_url( $link_uri, $link_protocol ), 
-							site_url( $link_uri, $link_protocol ), 
-							'target ="_blank"' 
-						);
+						$this->load->library('email');
+
+                                                $this->email->from('info@softwaretz.com', 'Sarah');
+                                                $this->email->to('sarah@softwaretz.com');
+                                                
+                                                $this->email->subject('Account Recovery');
+                                                $this->email->message('Click this link '.$link_uri);
+
+                                                $this->email->send();
 
 						$view_data['confirmation'] = 1;
 					}
@@ -140,22 +117,15 @@ class App extends MY_Controller
 			}
 		}
 
-		echo $this->load->view('auth/page_header', '', TRUE);
+		
 
-		echo $this->load->view('auth/recover_form', ( isset( $view_data ) ) ? $view_data : '', TRUE );
+            $this->load->view('auth/recover_form', ( isset( $view_data ) ) ? $view_data : '');
 
-		echo $this->load->view('auth/page_footer', '', TRUE);
+		
 	}
-
-	// --------------------------------------------------------------
-
-	/**
-	 * Verification of a user by email for recovery
-	 * 
-	 * @param  int     the user ID
-	 * @param  string  the passwd recovery code
-	 */
-	public function recovery_verification( $user_id = '', $recovery_code = '' )
+        
+        
+        public function recovery_verification( $user_id = '', $recovery_code = '' )
 	{
 		/// If IP is on hold, display message
 		if( $on_hold = $this->authentication->current_hold_status( TRUE ) )
@@ -165,7 +135,7 @@ class App extends MY_Controller
 		else
 		{
 			// Load resources
-			$this->load->model('auth/auth_model');
+			$this->load->model('auth/app_model');
 
 			if( 
 				/**
@@ -183,7 +153,7 @@ class App extends MY_Controller
 				 * Try to get a hashed password recovery 
 				 * code and user salt for the user.
 				 */
-				$recovery_data = $this->auth_model->get_recovery_verification_data( $user_id ) )
+				$recovery_data = $this->app_model->get_recovery_verification_data( $user_id ) )
 			{
 				/**
 				 * Check that the recovery code from the 
@@ -220,38 +190,87 @@ class App extends MY_Controller
 			 */
 			if( $this->tokens->match )
 			{
-				$this->auth_model->recovery_password_change();
+				$this->app_model->recovery_password_change();
 			}
 		}
 
-		echo $this->load->view('auth/page_header', '', TRUE);
-
-		echo $this->load->view( 'auth/choose_password_form', $view_data, TRUE );
-
-		echo $this->load->view('auth/page_footer', '', TRUE);
+		$this->load->view('auth/choose_password_form', $view_data);
 	}
-
-   public function language($param=NULL) {
-        $languages = array('sw-tz','english');
-        if(!empty($param) && in_array($param, $languages)){
-            $this->session->set_userdata('language',$param);
-        }
         
-        if (isset($_SERVER["HTTP_REFERER"])) {
-        header("Location: " . $_SERVER["HTTP_REFERER"]);
-        } else {
-            header("Location: " . base_url());
-        }    
-    }
-    
-    public function error404() {
-        $this->load->view('auth/error404',['title'=>'Page Not Found | Hisazangu']);
-    }
-    
-    public function register() {
-        $this->load->view('auth/register',['title'=>'Register | Hisazangu']);
-    }
-}
+        
+        public function create_user()
+	{
+		$this->is_logged_in();
+                $this->load->view('auth/register');
 
-/* End of file Examples.php */
-/* Location: /community_auth/controllers/Examples.php */
+		// Load resources
+		$this->load->helper('auth');
+		$this->load->model('auth/app_model');
+		$this->load->model('app/validation_callables');
+		$this->load->library('form_validation');
+
+		$this->form_validation->set_data( $user_data );
+
+		$validation_rules = [
+			[
+				'field' => 'username',
+				'label' => 'username',
+				'rules' => 'max_length[12]|is_unique[' . db_table('user_table') . '.username]',
+				'errors' => [
+					'is_unique' => 'Username already in use.'
+				]
+			],
+			[
+				'field' => 'passwd',
+				'label' => 'passwd',
+				'rules' => [
+					'trim',
+					'required',
+					[ 
+						'_check_password_strength', 
+						[ $this->validation_callables, '_check_password_strength' ] 
+					]
+				],
+				'errors' => [
+					'required' => 'The password field is required.'
+				]
+			],
+			[
+				'field'  => 'email',
+				'label'  => 'email',
+				'rules'  => 'trim|required|valid_email|is_unique[' . db_table('user_table') . '.email]',
+				'errors' => [
+					'is_unique' => 'Email address already in use.'
+				]
+			],
+			[
+				'field' => 'auth_level',
+				'label' => 'auth_level',
+				'rules' => 'required|integer|in_list[1,6,7,8,9]'
+			]
+		];
+
+		$this->form_validation->set_rules( $validation_rules );
+
+		if( $this->form_validation->run() )
+		{
+			$user_data['passwd']     = $this->authentication->hash_passwd($user_data['passwd']);
+			$user_data['user_id']    = $this->app_model->get_unused_id();
+			$user_data['created_at'] = date('Y-m-d H:i:s');
+
+                }
+		
+	}
+        
+        
+        
+        public function logout()
+	{
+		$this->authentication->logout();
+
+		// Set redirect protocol
+		$redirect_protocol = USE_SSL ? 'https' : NULL;
+
+		redirect(base_url(LOGIN_PAGE));
+	}
+}
