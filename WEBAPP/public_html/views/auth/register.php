@@ -2,8 +2,8 @@
 <!-- BEGIN BODY -->
 
 <body class=" login_page">
-
-
+ 
+ 
     <div class="container-fluid">
         <div class="login-wrapper row">
             <div id="login" class="login loginpage col-lg-offset-2 col-md-offset-3 col-sm-offset-3 col-xs-offset-0 col-xs-12 col-sm-6 col-lg-8">    

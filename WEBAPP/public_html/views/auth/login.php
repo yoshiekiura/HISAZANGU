@@ -104,7 +104,7 @@ if( ! isset( $on_hold_message ) )
 			</div>
 		';
 	}
-?>
+?> 
                    </div>
                 </div>
 

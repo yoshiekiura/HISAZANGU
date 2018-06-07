@@ -37,7 +37,7 @@ class App extends My_Controller
 		$this->load->view('auth/login');
                 $this->load->view('auth/footer');
 	}
-        
+         
        public function register()
 	{
             $this->load->view('auth/header');

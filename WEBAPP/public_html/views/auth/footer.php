@@ -1,7 +1,7 @@
 
     <!-- MAIN CONTENT AREA ENDS -->
     <!-- LOAD FILES AT PAGE END FOR FASTER LOADING -->
-
+ 
     <!-- CORE JS FRAMEWORK - START -->
     <script src="<?php echo base_url();?>resources/assets/js/jquery-1.11.2.min.js"></script>
     <script src="<?php echo base_url();?>resources/assets/js/jquery.easing.min.js"></script>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-
+ 
 <head>
     <!-- 
         * @Package: Cryptonia - Bitcoin & Cryptocurrency trading Dashboard

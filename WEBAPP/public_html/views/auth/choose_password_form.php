@@ -179,7 +179,7 @@ if( $showform == 1 )
 				</form>
 			</div>
 		<?php
-	} 
+	}  
 }
 ?>
                    </div>
