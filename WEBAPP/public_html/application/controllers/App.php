@@ -204,7 +204,9 @@ class App extends My_Controller
 		$this->load->view('auth/choose_password_form', $view_data);
                 $this->load->view('auth/footer');
 	}
-
+        
+       
+        
         
         public function logout()
 	{
