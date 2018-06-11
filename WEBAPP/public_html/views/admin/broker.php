@@ -8,51 +8,45 @@
 
                         <div class="pull-left">
                             <!-- PAGE HEADING TAG - START -->
-                            <h1 class="title">BROKERS</h1>
+                            <h3 class="title">BROKERS</h3>
                             <!-- PAGE HEADING TAG - END -->
                         </div>
                          </div>
-                    
+                </div>
+                
                    <div class="col-lg-12">
                     <section class="box nobox marginBottom0">
                         <div class="content-body">
                             <div class="row">
                                 <div class="col-lg-4 col-sm-6 col-xs-12">
-                                    <div class="r4_counter db_box has-gradient-to-right-bottom">
-                                   
-                                        <div class="stats">
-                                            <h3 class="color-white mb-5">DETAILS</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-sm-6 col-xs-12">
-                                    <div class="r4_counter db_box">
-                                        <div class="stats">
-                                           <a style="text-decoration: none;" href="<?php echo base_url('admin/brokers/register'); ?>"> 
-                                               <h3 class="mb-5">REGISTER</h3>
-                                           </a>
-                                        </div>
-                                    </div>
+                                    <a style="text-decoration: none;" href="<?php echo base_url('admin/brokers'); ?>"> 
+                                           <p>
+                                            <button class="btn btn-success btn-block">OVERVIEW</button>
+                                        </p>
+                                    </a>
                                 </div>
                                 
                                 <div class="col-lg-4 col-sm-6 col-xs-12">
-                                    <div class="r4_counter db_box">
-                                        <div class="icon-after cc LTC-alt"></div>
-                                        <i class="pull-left cc LTC-alt icon-md icon-primary mt-10"></i>
-                                        <div class="stats">
-                                            <h3 class="mb-5">  </h3>
-                                           
-                                        </div>
-                                    </div>
+                                    <a style="text-decoration: none;" href="<?php echo base_url('admin/brokers/register'); ?>"> 
+                                     <p>
+                                            <button class="btn btn-primary btn-block">REGISTER</button>
+                                        </p>
+                                    </a>
+                                        
                                 </div>
-
+                                
+                                <div class="col-lg-4 col-sm-6 col-xs-12">
+                                        <p>
+                                            <button class="btn btn-primary btn-block">VIEW</button>
+                                        </p>
+                                 </div>
+                                </div>
                             </div>
-                            <!-- End .row -->
+                        </section>
                         </div>
-                    </section>
-                </div>
-
-                    <section class="box" style="border-left: 3px solid #e77512;">
+                <div class="clearfix"></div>
+                <br />
+                <dv class="col-md-12">
                         <header class="panel_header">
                             <h2 class="title pull-left">Broker's Details</h2>
                            
@@ -88,18 +82,14 @@
                                 </div>
                             </div>
                         </div>
-                    </section>
+                    </div>
+
+
+                    
                     
                         </div>
                     </section>
-                </div>
-                        
-                   
-                </div>
-          
 
-            </div>
-        </section>
 
 
     <!-- END CONTAINER -->

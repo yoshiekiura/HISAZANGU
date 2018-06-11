@@ -26,22 +26,21 @@
                         </a>
                     </li>
                   
-                  <li class="open">
+                <li class="">
                         <a href="#">
-                           
-                        <i class="fa fa-group"></i>
+                            <i class="fa fa-group"></i>
                             <span class="title">Brokers</span>
-                            <span class="arrow open"></span>
+                            <span class="arrow "></span>
                         </a>
-                        <ul class="sub-menu" style="display: block;">
+                        <ul class="sub-menu">
                             <li>
-                                <a href="<?php echo base_url('admin/brokers'); ?>"> Overview</a>
+                                <a class="" href="<?php echo base_url('admin/brokers'); ?>">Overview</a>
                             </li>
                             <li>
-                                <a href="<?php echo base_url('admin/brokers/register'); ?>">Registration</a>
+                                <a class="" href="<?php echo base_url('admin/brokers/register'); ?>">Registration</a>
                             </li>
                         </ul>
-                        </li>
+                </li>
                     
                 </ul>
 

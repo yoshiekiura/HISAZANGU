@@ -27,7 +27,10 @@ class Brokers extends MY_Controller {
     
      public function index()
         {
-            $this->load->view('admin/hor_view');
+           $pdata = array(
+               'title' => 'HisaZangu | Overview'
+           );
+            $this->load->view('admin/hor_view', $pdata);
             $this->load->view('admin/ver_view');
             $this->load->view('admin/broker');
             $this->load->view('admin/footer_view');
@@ -35,7 +38,10 @@ class Brokers extends MY_Controller {
         
         public function register()
         {
-            $this->load->view('admin/hor_view');
+            $pdata = array(
+               'title' => 'HisaZangu | Register'
+           );
+            $this->load->view('admin/hor_view', $pdata);
             $this->load->view('admin/ver_view');
             $this->load->view('admin/broker_register');
             $this->load->view('admin/footer_view');

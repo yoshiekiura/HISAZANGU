@@ -8,7 +8,7 @@
 
                         <div class="pull-left">
                             <!-- PAGE HEADING TAG - START -->
-                            <h1 class="title">BROKERS</h1>
+                            <h3 class="title">BROKERS</h3>
                             <!-- PAGE HEADING TAG - END -->
                         </div>
                          </div>
@@ -18,38 +18,27 @@
                         <div class="content-body">
                             <div class="row">
                                  <div class="col-lg-4 col-sm-6 col-xs-12">
-                                     
-                                    <div class="r4_counter db_box">
-                                         
-                                        <div class="stats">
-                                            <a style="text-decoration: none;" href="<?php echo base_url('admin/brokers'); ?>">
-                                               <h3 class="mb-5">DETAILS</h3>
-                                            </a>
-                                        </div>     
-                                    </div>
+                                    <a style="text-decoration: none;" href="<?php echo base_url('admin/brokers'); ?>"> 
+                                           <p>
+                                            <button class="btn btn-primary btn-block">DETAILS</button>
+                                        </p>
+                                    </a>
                                 </div>
                                 
                                 <div class="col-lg-4 col-sm-6 col-xs-12">
-                                    <div class="r4_counter db_box has-gradient-to-right-bottom">
-                                   
-                                        <div class="stats">
-                                            <a style="text-decoration: none;" href="<?php echo base_url('admin/brokers/register'); ?>"> 
-                                            <h3 class="color-white mb-5">REGISTER</h3>
-                                             </a>
-                                        </div>
-                                    </div>
+                                    <a style="text-decoration: none;" href="<?php echo base_url('admin/brokers/register'); ?>"> 
+                                     <p>
+                                            <button class="btn btn-success btn-block">REGISTER</button>
+                                        </p>
+                                    </a>
+                                        
                                 </div>
-                               
                                 
                                 <div class="col-lg-4 col-sm-6 col-xs-12">
-                                    <div class="r4_counter db_box">
-                             
-                                        <div class="stats">
-                                            <h3 class="mb-5"> </h3>
-                                           
-                                        </div>
-                                    </div>
-                                </div>
+                                        <p>
+                                            <button class="btn btn-primary btn-block">VIEW</button>
+                                        </p>
+                                 </div>
 
                             </div>
                             <!-- End .row -->

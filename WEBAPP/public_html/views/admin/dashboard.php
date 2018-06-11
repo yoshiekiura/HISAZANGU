@@ -9,7 +9,7 @@
 
                         <div class="pull-left">
                             <!-- PAGE HEADING TAG - START -->
-                            <h1 class="title">Dashboard</h1>
+                            <h3 class="title">Dashboard</h3>
                             <!-- PAGE HEADING TAG - END -->
                         </div>
 
