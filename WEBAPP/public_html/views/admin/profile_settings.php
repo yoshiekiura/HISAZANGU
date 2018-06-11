@@ -126,6 +126,20 @@
                                                 </div>
                                             </div>
                                         </div> 
+                                        <div class="option-identity-wrapper no-mb">
+                
+                                            <div class="tab-head left15">
+                                                <div class="form-group">
+                                                        <div class="controls">
+                                                            <input type="text" class="form-control" name="email" placeholder="Phone Numbe">
+                                                        </div>
+                                                    </div>
+                                                <div class="col-sm-3 no-pr">
+                                                    <button type="submit" class="btn btn-primary mt-30 btn-corner"><i class="fa fa-check"></i> Change Email</button>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                        
                                    </div>                                    
                                 </div>
                     </section>
