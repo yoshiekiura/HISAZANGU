@@ -24,7 +24,7 @@ class Profile extends MY_Controller {
         $this->load->helper('admin');
     }
     
-    
+     
      public function index()
         {
             $this->load->view('admin/hor_view');
@@ -37,7 +37,7 @@ class Profile extends MY_Controller {
         {       
             $this->load->view('admin/hor_view');
             $this->load->view('admin/ver_view');
-            $this->load->view('admin/settings');
+            $this->load->view('admin/profile_settings');
             $this->load->view('admin/footer_view');
         }
 }

@@ -15,12 +15,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 // USER RELATED TABLES
 $config['user_table'] = 'users';
-$config['profiletable'] = 'profiledata';
-$config['projectstable'] = 'projects';
-$config['settingstable'] = 'settings';
-$config['financesourcestable'] = 'finance_sources';
-$config['accountstable'] = 'accounts';
-$config['accounttranstable'] = 'account_trans';
 
 
 // LOGIN ERROR RELATED TABLES

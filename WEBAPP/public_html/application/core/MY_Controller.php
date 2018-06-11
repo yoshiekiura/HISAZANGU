@@ -20,11 +20,24 @@ class MY_Controller extends Auth_Controller
 	/**
 	 * Class constructor 
 	 */
-
-	public function __construct()
+        public $profile_data;
+        
+        public function __construct()
 	{
 		parent::__construct();
+                $this->_profile_data();
 	}
+        
+        private function _profile_data() {
+            $this->require_min_level(1);
+            // load profile data form controllers
+            $this->profile_data = $this->my_auth_model->_get_profile_data( $this->auth_user_id );
+            
+            // load profile data for views
+            $var['profile_data'] = $this->profile_data;            
+            $this->load->vars($var);
+            
+        }
 }
 
 /* End of file MY_Controller.php */

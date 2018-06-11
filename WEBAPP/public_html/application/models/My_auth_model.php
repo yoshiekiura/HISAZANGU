@@ -64,6 +64,13 @@ class My_auth_model extends Auth_model {
    
   // -----------------------------------------------------------------------
   
+   public function _get_profile_data($user_id) {
+    $this->db->select('*');
+    $this->db->where('user_id', $user_id);
+    $query = $this->db->get( config_item('user_table'));
+    return $query->row();    
+  }
+  
   public function projects() {
       $query = $this->db->select( '*' )
         ->from( config_item('projectstable') )
