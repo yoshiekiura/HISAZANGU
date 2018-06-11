@@ -124,15 +124,59 @@
                             </div>
 
                         </div>
+                
+                <!--Second form-->
+                <div class="col-lg-12">
+                    <section class="box has-border-left-3">
+                            <header class="panel_header">
+                                <h2 class="title pull-left">Authentication Settings</h2>
+                            </header>
+                            <div class="content-body">    
+                                <div class="row">
+                                    <div class="col-xs-8">
+                                        <div class="option-identity-wrapper no-mb">
+                
+                                            <div class="tab-head left15">
+                                                <div class="form-group">
+                                                        <span class="desc">Current Password</span>
+                                                        <div class="controls">
+                                                            <input type="password" class="form-control" name="cpassword" placeholder="">
+                                                        </div>
+                                                    </div>
+                                                
+                                                <div class="form-group">
+                                                        <span class="desc">New Password</span>
+                                                        <div class="controls">
+                                                            <input type="password" class="form-control" name="newpassword" placeholder="">
+                                                        </div>
+                                                    </div>
+                                                
+                                                <div class="form-group">
+                                                        <span class="desc">Confirm Password</span>
+                                                        <div class="controls">
+                                                            <input type="password" class="form-control" name="confirm" placeholder="">
+                                                        </div>
+                                                    </div>
+                                                
+                                                </div>
+                                                <div class="col-sm-3 no-pr">
+                                                    <button type="submit" class="btn btn-primary mt-30 btn-corner"><i class="fa fa-check"></i> Change</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
                     </section>
                 </div>
+                
+                
+</div>
+</section>
                         
                    
-                </div>
-          
-
-            </div>
-        </section>
+  
 
 
     <!-- END CONTAINER -->

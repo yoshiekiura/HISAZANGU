@@ -34,14 +34,4 @@ class Dashboard extends MY_Controller{
         $this->load->view('admin/dashboard');
         $this->load->view('admin/footer_view');
     }
-    
-     public function settings()
-         {
-//        
-        $this->load->view('admin/hor_view');
-        $this->load->view('admin/ver_view');
-        $this->load->view('admin/settings');
-        $this->load->view('admin/footer_view');
-       
-        }
 }

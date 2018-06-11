@@ -8,7 +8,7 @@
     -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title><?php echo (!empty($title))? $title: 'Sarah | Dashboard'; ?></title>
+    <title><?php echo (!empty($title))? $title: 'HisaZangu | Dashboard'; ?></title>
     <meta content="" name="description" />
     <meta content="" name="author" />
 
@@ -88,12 +88,12 @@
                         </a>
                         <ul class="dropdown-menu profile animated fadeIn">
                             <li> 
-                                <a href="<?php echo base_url('admin/dashboard/settings'); ?>">
+                                <a href="<?php echo base_url('admin/profile/settings'); ?>">
                                     <i class="fa fa-wrench"></i> Settings
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="<?php echo base_url('admin/profile'); ?>">
                                     <i class="fa fa-user"></i> Profile
                                 </a>
                             </li>
