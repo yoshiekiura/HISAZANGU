@@ -1,21 +1,25 @@
 
 
-<body class=" login_page">
-
-    <div class="container-fluid">
-        <div class="login-wrapper row">
-            <div id="login" class="login loginpage col-lg-offset-4 col-md-offset-3 col-sm-offset-3 col-xs-offset-0 col-xs-12 col-sm-6 col-lg-4">    
-                <div class="login-form-header">
-                     <img src="<?php echo base_url();?>resources/data/icons/padlock.png" alt="login-icon" style="max-width:64px">
-                     <div class="login-header">
-                         <h4 class="bold color-white">Account Recovery</h4>
-                         <h4><small>Enter your new password.</small></h4>
-                     </div>
-                </div>
-               
-                <div class="box login">
-
-               <div class="content-body" style="padding-top:30px">
+<body class="skin-purple card-no-border">
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">Recover Password</p>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <section id="wrapper">
+        <div class="login-register" style="background-image:url(<?php echo base_url();?>resources/assets/images/background/login-register.jpg);">
+            <div class="login-box card">
+                <div class="card-body">
+                    
+<!--<form class="form-horizontal form-material" id="loginform" >-->
+<h3 class="box-title m-b-20">Recovery Account</h3>
                    
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
@@ -121,38 +125,16 @@ if( $showform == 1 )
 				<?php echo form_open(); ?>
 					<fieldset>
 						
-						<div>
-
-							<?php
-								// PASSWORD LABEL AND INPUT ********************************
-								echo form_label('Password','passwd', ['class'=>'form_label']);
-
-								$input_data = [
-									'name'       => 'passwd',
-									'id'         => 'passwd',
-									'class'      => 'form_input password',
-									'max_length' => config_item('max_chars_for_password')
-								];
-								echo form_password($input_data);
-							?>
-
-						</div>
-						<div>
-
-							<?php
-								// CONFIRM PASSWORD LABEL AND INPUT ******************************
-								echo form_label('Confirm Password','passwd_confirm', ['class'=>'form_label']);
-
-								$input_data = [
-									'name'       => 'passwd_confirm',
-									'id'         => 'passwd_confirm',
-									'class'      => 'form_input password',
-									'max_length' => config_item('max_chars_for_password')
-								];
-								echo form_password($input_data);
-							?>
-
-						</div>
+						<div class="form-group">
+                                                    <div class="col-xs-12">
+                                                        <input class="form-control" name="passwd" type="password" required="" placeholder="New Password"> </div>
+                                                </div>
+						
+                                                <div class="form-group">
+                                                    <div class="col-xs-12">
+                                                        <input class="form-control" name="passwd_confirm" type="password" required="" placeholder="Confirm Password"> </div>
+                                                </div>
+                                            
 					</fieldset>
 					<div>
 						<div>
@@ -169,13 +151,25 @@ if( $showform == 1 )
 									'name'  => 'form_submit',
 									'id'    => 'submit_button',
 									'value' => 'Change Password',
-                                                                        'class' => 'btn btn-danger'
+                                                                        'class' => 'btn btn-success'
 								];
 								echo form_submit($input_data);
 							?>
 
 						</div>
 					</div>
+                            <br />
+                            <div class="form-group row">
+                            <div class="col-md-12">
+                                <a href="<?php echo base_url('app/register')?>" title="Register" class="text-info pull-left">
+                                        <i class="fa fa-user m-r-5"></i> Register</a>
+                                        
+                                <a href="<?php echo base_url(LOGIN_PAGE)?>" title="Sign In" class="text-success pull-right">
+                                        <i class="fa fa-lock m-r-5"></i> Login</a> 
+                                   
+                                </div> 
+                            </div>
+                            
 				</form>
 			</div>
 		<?php
@@ -184,12 +178,6 @@ if( $showform == 1 )
 ?>
                    </div>
                 </div>
-                
-                <p id="nav">
-                    <a class="pull-left" href="<?php echo base_url('app/register')?>" title="Register">Register</a>
-                    <a class="pull-right" href="<?php echo base_url(LOGIN_PAGE)?>" title="Signin">Login</a>
-                    
-                </p>
 
             </div>
         </div>

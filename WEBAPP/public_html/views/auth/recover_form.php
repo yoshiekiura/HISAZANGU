@@ -1,67 +1,25 @@
-<!DOCTYPE html>
 
 
-<head>
-    <!-- 
-        * @Package: Cryptonia - Bitcoin & Cryptocurrency trading Dashboard
-        * @Version: 1.0.0
-    -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title><?php echo (!empty($title))? $title: 'Sarah | Recover'; ?></title>
-    <meta content="" name="description" />
-    <meta content="" name="author" />
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="<?php echo base_url();?>resources/assets/images/favicon.png" type="image/x-icon" />
-    <!-- For iPhone -->
-    <link rel="apple-touch-icon-precomposed" href="<?php echo base_url();?>resources/assets/images/apple-touch-icon-57-precomposed.png">
-    <!-- For iPhone 4 Retina display -->
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo base_url();?>resources/assets/images/apple-touch-icon-114-precomposed.png">
-    <!-- For iPad -->
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo base_url();?>resources/assets/images/apple-touch-icon-72-precomposed.png">
-    <!-- For iPad Retina display -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo base_url();?>resources/assets/images/apple-touch-icon-144-precomposed.png">
-
-    <!-- CORE CSS FRAMEWORK - START -->
-    <link href="<?php echo base_url();?>resources/assets/plugins/pace/pace-theme-flash.css" rel="stylesheet" type="text/css" media="screen" />
-    <link href="<?php echo base_url();?>resources/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="<?php echo base_url();?>resources/assets/plugins/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
-    <link href="<?php echo base_url();?>resources/assets/fonts/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
-    <link href="<?php echo base_url();?>resources/assets/css/animate.min.css" rel="stylesheet" type="text/css" />
-    <link href="<?php echo base_url();?>resources/assets/plugins/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" type="text/css" />
-    <!-- CORE CSS FRAMEWORK - END -->
-
-    <!-- HEADER SCRIPTS INCLUDED ON THIS PAGE - START -->
-
-    <!-- HEADER SCRIPTS INCLUDED ON THIS PAGE - END -->
-
-    <!-- CORE CSS TEMPLATE - START -->
-    <link href="<?php echo base_url();?>resources/assets/css/style.css" rel="stylesheet" type="text/css" />
-    <link href="<?php echo base_url();?>resources/assets/css/responsive.css" rel="stylesheet" type="text/css" />
-    <!-- CORE CSS TEMPLATE - END -->
-
-</head>
-<!-- END HEAD --> 
-
-<!-- BEGIN BODY -->
-
-<body class=" login_page">
-
-    <div class="container-fluid">
-        <div class="login-wrapper row">
-            <div id="login" class="login loginpage col-lg-offset-4 col-md-offset-3 col-sm-offset-3 col-xs-offset-0 col-xs-12 col-sm-6 col-lg-4">    
-                <div class="login-form-header">
-                     <img src="<?php echo base_url();?>resources/data/icons/padlock.png" alt="login-icon" style="max-width:64px">
-                     <div class="login-header">
-                         <h4 class="bold color-white">Account Recovery</h4>
-                         <h4><small>Please enter your email address.</small></h4>
-                     </div>
-                </div>
-               
-                <div class="box login">
-
-                    <div class="content-body" style="padding-top:30px">
+<body class="skin-purple card-no-border">
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">Recover Password</p>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <section id="wrapper">
+        <div class="login-register" style="background-image:url(<?php echo base_url();?>resources/assets/images/background/login-register.jpg);">
+            <div class="login-box card">
+                <div class="card-body">
+                    
+<!--<form class="form-horizontal form-material" id="loginform" >-->
+<h3 class="box-title m-b-20">Recovery Account</h3>
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
@@ -138,25 +96,13 @@ if( isset( $show_form ) )
 			<div>
 				<fieldset>
 					
-					<div>
-
-						<?php
-							// EMAIL ADDRESS *************************************************
-							echo form_label('Email Address','email', ['class'=>'form_label'] );
-
-							$input_data = [
-								'name'		=> 'email',
-								'id'		=> 'email',
-								'class'		=> 'form_input',
-								'maxlength' => 255
-							];
-							echo form_input($input_data);
-						?>
-
-					</div>
+                              <div class="form-group">
+                                    <div class="col-xs-12">
+                                        <input class="form-control" name="email" type="email" required="" placeholder="Enter Email"> </div>
+                                </div>
 				</fieldset>
 				<div>
-					<div>
+                                    <div class="">
 
 						<?php
 							// SUBMIT BUTTON **************************************************************
@@ -164,7 +110,7 @@ if( isset( $show_form ) )
 								'name'  => 'submit',
 								'id'    => 'submit_button',
 								'value' => 'Send Email',
-                                                                'class' => 'btn btn-danger'
+                                                                'class' => 'btn btn-success btn-rounded'
 							];
 							echo form_submit($input_data);
 						?>
@@ -172,44 +118,25 @@ if( isset( $show_form ) )
 					</div>
 				</div>
 			</div>
+                        
+                 <br />
+                 <div class="form-group row">
+                            <div class="col-md-12">
+                                <a href="<?php echo base_url(LOGIN_PAGE)?>" title="Sign In" class="text-dark pull-left">
+                                        <i class="fa fa-lock m-r-5"></i> Login</a> 
+                                    
+                                    <a href="<?php echo base_url('app/register')?>" title="Register" class="text-success pull-right">
+                                        <i class="fa fa-user m-r-5"></i> Register</a> 
+                                </div> 
+                            </div>
 		</form>
                  
 <?php }?>
 	
                     </div>
                 </div>
-
-                <p id="nav">
-                    <a class="pull-left" href="<?php echo base_url(LOGIN_PAGE)?>" title="Signin">Login</a>
-                    <a class="pull-right" href="<?php echo base_url('app/register')?>" title="Register">Register</a>
-                </p>
-
             </div>
         </div>
     </div>
 
-    <!-- MAIN CONTENT AREA ENDS -->
-    <!-- LOAD FILES AT PAGE END FOR FASTER LOADING -->
-
-    <!-- CORE JS FRAMEWORK - START -->
-    <script src="<?php echo base_url();?>resources/assets/js/jquery-1.11.2.min.js"></script>
-    <script src="<?php echo base_url();?>resources/assets/js/jquery.easing.min.js"></script>
-    <script src="<?php echo base_url();?>resources/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script src="<?php echo base_url();?>resources/assets/plugins/pace/pace.min.js"></script>
-    <script src="<?php echo base_url();?>resources/assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-    <script src="<?php echo base_url();?>resources/assets/plugins/viewport/viewportchecker.js"></script>
-    <script>
-        window.jQuery || document.write('<script src="<?php echo base_url();?>resources/assets/js/jquery-1.11.2.min.js"><\/script>');
-    </script>
-    <!-- CORE JS FRAMEWORK - END -->
-
-    <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - START -->
-
-    <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - END -->
-
-    <!-- CORE TEMPLATE JS - START -->
-    <script src="<?php echo base_url();?>resources/assets/js/scripts.js"></script>
-    <!-- END CORE TEMPLATE JS - END -->
-
-</body>
-</html>
+   

@@ -1,23 +1,25 @@
 
-<!-- BEGIN BODY -->
 
-<body class=" login_page">
-
-    <div class="container-fluid">
-        <div class="login-wrapper row">
-            <div id="login" class="login loginpage col-lg-offset-4 col-md-offset-3 col-sm-offset-3 col-xs-offset-0 col-xs-12 col-sm-6 col-lg-4">    
-                <div class="login-form-header">
-                     <img src="<?php echo base_url();?>resources/data/icons/padlock.png" alt="login-icon" style="max-width:64px">
-                     <div class="login-header">
-                         <h4 class="bold color-white">Login Now!</h4>
-                         <h4><small>Please enter your credentials to login.</small></h4>
-                     </div>
-                </div>
-               
-                <div class="box login">
-
-               <div class="content-body" style="padding-top:30px">
-                   
+<body class="skin-purple card-no-border">
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">Login</p>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <section id="wrapper">
+        <div class="login-register" style="background-image:url(<?php echo base_url();?>resources/assets/images/background/login-register.jpg);">
+            <div class="login-box card">
+                <div class="card-body">
+                    
+<!--<form class="form-horizontal form-material" id="loginform" >-->
+<h3 class="box-title m-b-20">Sign In</h3>
 <?php
 
 if( ! isset( $on_hold_message ) )
@@ -29,7 +31,7 @@ if( ! isset( $on_hold_message ) )
 				<p>
 					Invalid Username, Email Address, or Password.
 				</p>
-				
+			
 			</div>
 		';
 	}
@@ -40,16 +42,17 @@ if( ! isset( $on_hold_message ) )
 
 	<div>
 
-		<label for="login_string" class="form_label">Username or Email</label>
-		<input type="text" name="login_string" id="login_string" class="form_input" autocomplete="off" maxlength="255" />
+		<div class="form-group ">
+                            <div class="col-xs-12">
+                                <input class="form-control" type="text" name="login_string" required="" placeholder="Username"> </div>
+                </div>
 
 		<br /> 
 
-		<label for="login_pass" class="form_label">Password</label>
-		<input type="password" name="login_pass" id="login_pass" class="form_input password" <?php 
-			if( config_item('max_chars_for_password') > 0 )
-				echo 'maxlength="' . config_item('max_chars_for_password') . '"'; 
-		?> autocomplete="off" readonly="readonly" onfocus="this.removeAttribute('readonly');" />
+		<div class="form-group">
+                            <div class="col-xs-12">
+                                <input class="form-control" name="login_pass" type="password" required="" placeholder="Password"> </div>
+                </div>
 
 
 		<?php
@@ -70,13 +73,22 @@ if( ! isset( $on_hold_message ) )
 			<?php
 				$link_protocol = USE_SSL ? 'https' : NULL;
 			?>
-                    <a style="color: orange" href="<?php echo site_url('app/recover', $link_protocol); ?>">
-				Can't access your account?
-			</a>
-		</p>
-                <button type="submit" class="btn btn-primary" name="submit" id="submit_button">Login</button>
+                    
+                 <button name="submit" class="btn btn-block btn-lg btn-info btn-rounded" type="submit">Log In</button>
+                 
+                 <div class="form-group row">
+                            <div class="col-md-12">
+                                <a href="<?php echo base_url('app/recover')?>" title="Can't access your account?" class="text-dark pull-left">
+                                        <i class="fa fa-lock m-r-5"></i> Forgot password?</a> 
+                                    
+                                    <a href="<?php echo base_url('app/register')?>" title="Register" class="text-success pull-right">
+                                        <i class="fa fa-user m-r-5"></i> Sign Up</a> 
+                                </div> 
+                            </div>
+                        </div>
+       </div>
 
-	</div>
+
 </form>
 
 <?php
@@ -108,13 +120,13 @@ if( ! isset( $on_hold_message ) )
                    </div>
                 </div>
 
-                <p id="nav">
-                    <a class="pull-left" href="<?php echo base_url('app/recover')?>" title="Password Lost and Found">Forgot password?</a>
-                    <a class="pull-right" href="<?php echo base_url('app/register')?>" title="Register">Register</a>
-                </p>
 
             </div>
+     
+               
+                </div>
+            </div>
         </div>
-    </div>
-
-
+    </section>
+    
+   
