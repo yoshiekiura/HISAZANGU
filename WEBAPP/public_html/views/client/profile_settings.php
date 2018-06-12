@@ -1,6 +1,4 @@
-
-
-        <!-- START CONTENT -->
+ <!-- START CONTENT -->
         <section id="main-content" class=" ">
             <div class="wrapper main-wrapper row">
                 <div class='col-xs-12'>
