@@ -4,7 +4,7 @@
 
         <!-- SIDEBAR - START -->
 
-        <div class="page-sidebar fixedscroll">
+        <div class="page-sidebar">
 
             <!-- MAIN MENU - START -->
             <div class="page-sidebar-wrapper" id="main-menu-wrapper">

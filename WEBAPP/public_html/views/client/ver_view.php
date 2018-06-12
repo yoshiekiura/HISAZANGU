@@ -18,7 +18,7 @@
                         </a>
                     </li>
                     
-                    <li class="">
+<!--                    <li class="">
                         <a href="<?php echo base_url('client/companies'); ?>"">
                             <i class="fa fa-institution"></i>
                             <span class="title">Companies</span>
@@ -30,7 +30,7 @@
                             <i class="fa fa-group"></i>
                             <span class="title">Shareholders</span>
                         </a>
-                    </li>
+                    </li>-->
                     
                     <li class="">
                         <a href="<?php echo base_url('client/settings'); ?>"">
