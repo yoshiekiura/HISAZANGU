@@ -22,7 +22,7 @@
                     <section class="box nobox marginBottom0">
                         <div class="content-body">
                             <div class="row">
-                                <div class="col-lg-4 col-sm-6 col-xs-12">
+                                <div class="col-lg-3 col-sm-6 col-xs-12">
                                     <div class="r4_counter db_box">
                                      
                                     
@@ -34,7 +34,7 @@
                                          
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-sm-6 col-xs-12">
+                                <div class="col-lg-3 col-sm-6 col-xs-12">
                                     <div class="r4_counter db_box">
                                         <div class=""></div>
                                       
@@ -44,7 +44,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-sm-6 col-xs-12">
+                                <div class="col-lg-3 col-sm-6 col-xs-12">
                                     <div class="r4_counter db_box">
                                         <div class=""></div>
                                      <div class="stats">
@@ -53,6 +53,16 @@
                                         </div>
                                     </div>
                                 </div>
+                                  <div class="col-lg-3 col-sm-6 col-xs-12">
+                                    <div class="r4_counter db_box">
+                                        <div class=""></div>
+                                     <div class="stats">
+                                            <h3 class="">23</h3>
+                                            <h4>Sample</h4>
+                                        </div>
+                                    </div>
+                                </div>
+
 
                             </div>
                             <!-- End .row -->
