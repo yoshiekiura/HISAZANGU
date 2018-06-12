@@ -1,58 +1,49 @@
 $(function () {
     "use strict";
     //This is for the Notification top right
-    $.toast({
-            heading: 'Welcome to Elite admin'
-            , text: 'Use the predefined ones, or specify a custom position object.'
-            , position: 'top-right'
-            , loaderBg: '#ff6849'
-            , icon: 'info'
-            , hideAfter: 3500
-            , stack: 6
-        })
-        // Dashboard 1 Morris-chart
+   
     Morris.Area({
         element: 'morris-area-chart'
         , data: [{
                 period: '2010'
-                , iphone: 50
-                , ipad: 80
-                , itouch: 20
+                , broker1: 50
+                , broker2: 80
+                , broker3: 20
         }, {
                 period: '2011'
-                , iphone: 130
-                , ipad: 100
-                , itouch: 80
+                , broker1: 130
+                , broker2: 100
+                , broker3: 80
         }, {
                 period: '2012'
-                , iphone: 80
-                , ipad: 60
-                , itouch: 70
+                , broker1: 80
+                , broker2: 60
+                , broker3: 70
         }, {
                 period: '2013'
-                , iphone: 70
-                , ipad: 200
-                , itouch: 140
+                , broker1: 70
+                , broker2: 200
+                , broker3: 140
         }, {
                 period: '2014'
-                , iphone: 180
-                , ipad: 150
-                , itouch: 140
+                , broker1: 180
+                , broker2: 150
+                , broker3: 140
         }, {
                 period: '2015'
-                , iphone: 105
-                , ipad: 100
-                , itouch: 80
+                , broker1: 105
+                , broker2: 100
+                , broker3: 80
         }
             , {
                 period: '2016'
-                , iphone: 250
-                , ipad: 150
-                , itouch: 200
+                , broker1: 250
+                , broker2: 150
+                , broker3: 200
         }]
         , xkey: 'period'
-        , ykeys: ['iphone', 'ipad', 'itouch']
-        , labels: ['iPhone', 'iPad', 'iPod Touch']
+        , ykeys: ['broker1', 'broker2', 'broker3']
+        , labels: ['Broker 1', 'Broker 2', 'Broker 3']
         , pointSize: 3
         , fillOpacity: 0
         , pointStrokeColors: ['#00bfc7', '#fb9678', '#9675ce']

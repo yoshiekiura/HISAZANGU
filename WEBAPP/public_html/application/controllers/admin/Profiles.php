@@ -11,7 +11,7 @@
  *
  * @author Sarah Bigambalaye
  */
-class Profile extends MY_Controller {
+class Profiless extends MY_Controller {
     
     public function __construct()
     {

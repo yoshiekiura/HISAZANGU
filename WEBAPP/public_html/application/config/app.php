@@ -6,6 +6,6 @@
  * and open the template in the editor.
  */
 
-$config['app_name'] = 'App';
-$config['application_name'] = 'Application';
+$config['app_name'] = 'HSZ';
+$config['application_name'] = 'Hisa Zangu';
 $config['languages'] = array('menu');
