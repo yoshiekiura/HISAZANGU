@@ -30,7 +30,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $config['levels_and_roles'] = [
 	'1' => 'customer', 
         '6' => 'client',
-        '7' => 'brocker',
+        '7' => 'broker',
 	'8' => 'admin',
 	'9' => 'system'
 ];
