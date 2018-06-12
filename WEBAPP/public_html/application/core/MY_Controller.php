@@ -29,10 +29,11 @@ class MY_Controller extends Auth_Controller
 	}
         
         private function _profile_data() {
-            $this->require_min_level(1);
+            $this->is_logged_in();
             // load profile data form controllers
             $this->profile_data = $this->my_auth_model->_get_profile_data( $this->auth_user_id );
             
+            $this->config->item('profile_data', $this->profile_data);
             // load profile data for views
             $var['profile_data'] = $this->profile_data;            
             $this->load->vars($var);

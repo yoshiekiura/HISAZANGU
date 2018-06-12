@@ -4,7 +4,7 @@ class My_auth_model extends Auth_model {
    
   public function __construct()
   {
-    parent::__construct();
+    parent::__construct(); 
     
   }
  

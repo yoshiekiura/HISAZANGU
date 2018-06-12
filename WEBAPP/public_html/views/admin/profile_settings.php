@@ -83,23 +83,20 @@
                             <div class="content-body">    
                                 <div class="row">
                                     <div class="col-xs-6">
-                                        <div class="option-identity-wrapper no-mb">
-                
+                                        <div class="option-identity-wrapper no-mb">                
                                             <div class="tab-head left15">
                                                 <div class="form-group">
                                                         <span class="desc">Current Password</span>
                                                         <div class="controls">
                                                             <input type="password" class="form-control" name="cpassword" placeholder="">
                                                         </div>
-                                                    </div>
-                                                
+                                                    </div>                                                
                                                 <div class="form-group">
                                                         <span class="desc">New Password</span>
                                                         <div class="controls">
                                                             <input type="password" class="form-control" name="newpassword" placeholder="">
                                                         </div>
-                                                    </div>
-                                                
+                                                    </div>                                                
                                                 <div class="form-group">
                                                         <span class="desc">Confirm Password</span>
                                                         <div class="controls">
@@ -110,7 +107,7 @@
                                                     <button type="submit" class="btn btn-primary mt-30 btn-corner"><i class="fa fa-check"></i> Change Password</button>
                                                 </div>
                                             </div>
-                                        </div> 
+                                        </div>  
                                     </div>
                                     <div class="col-xs-6">
                                         <div class="option-identity-wrapper no-mb">
