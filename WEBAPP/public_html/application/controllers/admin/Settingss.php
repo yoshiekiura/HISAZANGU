@@ -11,6 +11,6 @@
  *
  * @author Sarah Bigambalaye
  */
-class Settings {
+class Settingss {
     
 }

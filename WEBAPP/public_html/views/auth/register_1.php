@@ -1,49 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url('resources/assets/');?>images/favicon.png">
-    <title>Elite Admin Template - The Ultimate Multipurpose admin template</title>
-    
-    <!-- page css -->
-    <link href="<?php echo base_url('resources/template/');?>css/pages/login-register-lock.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="<?php echo base_url('resources/template/');?>css/style.min.css" rel="stylesheet">
-    
-    
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
-</head>
+<!-- BEGIN BODY -->
 
-<body class="skin-purple card-no-border">
-    <!-- ============================================================== -->
-    <!-- Preloader - style you can find in spinners.css -->
-    <!-- ============================================================== -->
-    <div class="preloader">
-        <div class="loader">
-            <div class="loader__figure"></div>
-            <p class="loader__label">Elite admin</p>
-        </div>
-    </div>
-    <!-- ============================================================== -->
-    <!-- Main wrapper - style you can find in pages.scss -->
-    <!-- ============================================================== -->
-    <section id="wrapper">
-        <div class="login-register" style="background-image:url(<?php echo base_url('resources/assets/');?>images/background/login-register.jpg);">
-            <div class="login-box card">
-                <div class="card-body">
-                    <form >
+<body class=" login_page">
+ 
+ 
+    <div class="container-fluid">
+        <div class="login-wrapper row">
+            <div id="login" class="login loginpage col-lg-offset-2 col-md-offset-3 col-sm-offset-3 col-xs-offset-0 col-xs-12 col-sm-6 col-lg-8">    
+                <div class="login-form-header">
+                     <img src="<?php echo base_url();?>resources/data/icons/signup.png" alt="login-icon" style="max-width:64px">
+                     <div class="login-header">
+                         <h4 class="bold color-white">Signup Now!</h4>
+                         <h4><small>Please enter your data to register.</small></h4>
+                     </div>
+                </div>
+               
+                <div class="box login">
+
+                    <div class="content-body" style="padding-top:30px">
+
+                        <form >
                             <div class="row">
                                 <div class="col-xs-12">
 
@@ -217,38 +193,20 @@
                                  </div> 
                                
                         </form>
+                        
+<script type="text/javascript">
+  document.getElementById("field_terms").setCustomValidity("Please indicate that you accept the Terms and Conditions");
+</script>
+                        
                 </div>
+                </div>
+
+
             </div>
         </div>
-    </section>
-    
-    <!-- ============================================================== -->
-    <!-- End Wrapper -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- All Jquery -->
-    <!-- ============================================================== -->
-    <script src="<?php echo base_url('resources/assets/');?>node_modules/jquery/jquery-3.2.1.min.js"></script>
-    <!-- Bootstrap tether Core JavaScript -->
-    <script src="<?php echo base_url('resources/assets/');?>node_modules/popper/popper.min.js"></script>
-    <script src="<?php echo base_url('resources/assets/');?>node_modules/bootstrap/<?php echo base_url('resources/template/');?>js/bootstrap.min.js"></script>
-    <!--Custom JavaScript -->
-    <script type="text/javascript">
-        $(function() {
-            $(".preloader").fadeOut();
-        });
-        $(function() {
-            $('[data-toggle="tooltip"]').tooltip()
-        });
-        // ============================================================== 
-        // Login and Recover Password 
-        // ============================================================== 
-        $('#to-recover').on("click", function() {
-            $("#loginform").slideUp();
-            $("#recoverform").fadeIn();
-        });
-    </script>
-    
-</body>
+    </div>
 
-</html>
+    <!-- MAIN CONTENT AREA ENDS -->
+   
+</div>    
+

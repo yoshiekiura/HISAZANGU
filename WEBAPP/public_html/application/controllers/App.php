@@ -38,7 +38,7 @@ class App extends My_Controller
                 $this->load->view('auth/footer');
 	}
          
-       public function register()
+       public function registers()
 	{
             $this->load->view('auth/header');
             $this->load->view('auth/register');
@@ -217,4 +217,8 @@ class App extends My_Controller
 
 		redirect(base_url(LOGIN_PAGE));
 	}
+        
+        public function error404() {
+            $this->load->view('auth/error404');
+        }
 }

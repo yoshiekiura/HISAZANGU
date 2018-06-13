@@ -1,102 +1,173 @@
-
-
-        <!-- START CONTENT -->
-        <section id="main-content" class=" ">
-            <div class="wrapper main-wrapper row" style=''>
-
-                <div class='col-xs-12'>
-                    <div class="page-title">
-
-                        <div class="pull-left">
-                            <!-- PAGE HEADING TAG - START -->
-                            <h3 class="title">Dashboard</h3>
-                            <!-- PAGE HEADING TAG - END -->
+  <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <div class="row page-titles">
+                    <div class="col-md-5 align-self-center">
+                        <h4 class="text-themecolor">Dashboard</h4>
+                    </div>
+                    <div class="col-md-7 align-self-center text-right">
+                        <div class="d-flex justify-content-end align-items-center">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item active">Dashboard</li>
+                            </ol>
                         </div>
-
                     </div>
                 </div>
-                <div class="col-lg-12">
-                    <section class="box nobox marginBottom0">
-                        <div class="content-body">
-                            <div class="row">
-                                 <div class="col-lg-12 col-sm-6 col-xs-12">
-                                    <div class="r4_counter db_box">
-                                        <div class="icon-after cc DASH-alt"></div>
-                                        <i class='pull-left cc DASH-alt icon-md icon-primary mt-10'></i>
-                                        <div class="stats">
-                                            <form method="post">
-                                               
-                                                <h3>Select years</h3>
-                                                <select class="form-control" name="years">
-                                                     <option name="years"> --Select-- </option>   
-                                                    <?php 
-
-                                                    for($i=1985; $i<=2018; $i++)
-                                                    {
-
-                                                        echo "<option value=".$i.">".$i."</option>";
-                                                    }
-                                                    ?> 
-                                                        
-                                                    </select> 
-                                                <br />
-                                                
-                                                <input type="hidden" name="p_id" id="p_id" value="">
-                                                <button class="btn btn-success" class="form-control" name="archive" type="submit" onclick="archiveFunction()">
-                                                 Delete
-                                                </button>
-                                                
-                                            </form>
-                                            
-                                            <script>
-                                                function archiveFunction() {
-                                                    event.preventDefault(); // prevent form submit
-                                                    var form = event.target.form; // storing the form
-                                                            swal({
-                                                                    title: 'Are you sure?',
-                                                                    text: "It will be deleted permanently!",
-                                                                    type: 'warning',
-                                                                    showCancelButton: true,
-                                                                    confirmButtonColor: '#4CAF50',
-                                                                    cancelButtonColor: '#d33',
-                                                                    confirmButtonText: 'Yes, delete it!',
-                                                                    closeOnConfirm: false,
-                                                                    closeOnCancel: false
-                                                                   },
-                                                    function(isConfirm){
-                                                      if (isConfirm)
-                                                      {
-                                                         swal("Deleted!", "Your file has been deleted.", "success"); 
-                                                      } 
-                                                      else
-                                                      {
-                                                        swal("Cancelled", "Your imaginary file is not deleted :)", "error");
-                                                      }
-                                                    });
-                                                    }
-                                            </script>
-                                            
-
-
-        
-
-
-                                        </div>
+                <!-- ============================================================== -->
+                <!-- End Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Info box -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">TOTAL BROKERS</h5>
+                                <div class="d-flex no-block align-items-center m-t-20 m-b-20">
+                                    <div id="sparklinedash"></div>
+                                    <div class="ml-auto">
+                                        <h2 class="text-success"><i class="ti-arrow-up"></i> <span class="counter">10</span></h2>
                                     </div>
                                 </div>
-                             
                             </div>
-                            <!-- End .row -->
+                            <div id="sparkline8" class="sparkchart"></div>
                         </div>
-                    </section>
+                    </div>
+                    <!-- Column -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">TOTAL COMPANIES</h5>
+                                <div class="d-flex no-block align-items-center m-t-20 m-b-20">
+                                    <div id="sparklinedash2"></div>
+                                    <div class="ml-auto">
+                                        <h2 class="text-purple"><i class="ti-arrow-up"></i> <span class="counter">109</span></h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="sparkline8" class="sparkchart"></div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">TOTAL SHAREHOLDERS</h5>
+                                <div class="d-flex no-block align-items-center m-t-20 m-b-20">
+                                    <div id="sparklinedash3"></div>
+                                    <div class="ml-auto">
+                                        <h2 class="text-info"><i class="ti-arrow-up"></i> <span class="counter"><?php echo number_format(180025,0);?></span></h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="sparkline8" class="sparkchart"></div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <!-- Column -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">TOTAL ORDERS</h5>
+                                <div class="d-flex no-block align-items-center m-t-20 m-b-20">
+                                    <div id="sparklinedash4"></div>
+                                    <div class="ml-auto">
+                                        <h2 class="text-warning"><i class="ti-arrow-up"></i> <span class="counter">18%</span></h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="sparkline8" class="sparkchart"></div>
+                        </div>
+                    </div>
+                    <!-- Column -->
                 </div>
-
-                <div class="clearfix"></div>
-                <!-- MAIN CONTENT AREA STARTS -->
-
-
+                <!-- ============================================================== -->
+                <!-- End Info box -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Sales Chart and browser state-->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h5 class="card-title m-b-0">ORDERS</h5>
+                                            </div>
+                                            <div class="card-body bg-light">
+                                                <div class="d-flex no-block align-items-center">
+                                                    <span><h2 class=""><?php echo date('l');?></h2><small><?php echo date('d M Y');?></small></span>
+                                                    <div class="ml-auto">
+                                                        <canvas class="sleet" width="44" height="44"></canvas> <span class="display-6"><?php echo number_format(18500,0);?>K<sup>TZS</sup></span> </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8 col-sm-6 col-xs-12">
+                                        <div id="morris-area-chart" style="height:250px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Sales Chart -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Feed and erning -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title m-b-0">OPENING BALANCE</h5>
+                            </div>
+                            <div class="card-body bg-light">
+                                <div class="d-flex no-block align-items-center">
+                                    <span><h2 class=""><?php echo date('l');?></h2><small><?php echo date('d M Y');?></small></span>
+                                    <div class="ml-auto">
+                                        <canvas class="sleet" width="44" height="44"></canvas> <span class="display-6"><?php echo number_format(1850,2);?><sup>TZS</sup></span> </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title m-b-0">CLOSING BALANCE</h5>
+                            </div>
+                            <div class="card-body bg-light">
+                                <div class="d-flex no-block align-items-center">
+                                    <span><h2 class=""><?php echo date('l');?></h2><small><?php echo date('d M Y');?></small></span>
+                                    <div class="ml-auto">
+                                        <canvas class="sleet" width="44" height="44"></canvas> <span class="display-6"><?php echo number_format(1800,2);?><sup>TZS</sup></span> </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
-
-    <!-- END CONTAINER -->
-   
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+        </div>
