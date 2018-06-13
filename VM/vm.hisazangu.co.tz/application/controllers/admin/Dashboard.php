@@ -24,14 +24,11 @@ class Dashboard extends MY_Controller{
             
     }
     
-    public function index() {
-//        $pagedata = array('title' => 'Dashboard | Todo',
-//             'project' => $this->my_auth_model->projectdata($this->setting['default_project']));
-//        $this->load->vars($pagedata);
-        
-        $this->load->view('admin/hor_view');
-        $this->load->view('admin/ver_view');
+    public function index()
+    {
+        $this->load->view('admin/top_bar');
+        $this->load->view('admin/side_bar');
         $this->load->view('admin/dashboard');
-        $this->load->view('admin/footer_view');
+        $this->load->view('admin/footer');
     }
 }

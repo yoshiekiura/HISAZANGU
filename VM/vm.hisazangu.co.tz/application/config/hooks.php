@@ -21,9 +21,3 @@ $hook['post_system'] = array(
     'filename' => 'auth_sess_check.php',
     'filepath' => 'third_party/auth/hooks'
 );
-$hook['post_controller_constructor'][] = array(
-    'class' => 'app',
-    'function' => 'loadlanguages',
-    'filename' => 'App.php',
-    'filepath' => 'hooks'
-);

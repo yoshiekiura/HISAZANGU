@@ -19,7 +19,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * We are also going to encrypt and decrypt cookies if the session is being encrypted.
  */
 
-class MY_Input extends CI_Input {
+class MY_Input extends CI_Input { 
 
 	/**
 	 * Constructor

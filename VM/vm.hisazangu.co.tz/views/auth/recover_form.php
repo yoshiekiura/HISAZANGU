@@ -1,26 +1,32 @@
+
+<body class="skin-default-dark card-no-border">
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">Hisa Zangu</p>
+        </div>
+    </div> 
+  
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <section id="wrapper">
+        <div class="login-register" style="background-image:url(<?php echo base_url();?>resources/assets/images/background/login-register.jpg);">
+            <div class="login-box card">
+                <div class="card-body">
+<!--                    <form class="form-horizontal form-material" id="loginform" action="index.html">-->
+<h3 class="box-title m-b-20">Recovery Account</h3>
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
-/**
- * Community Auth - Recover Form View
- *
- * Community Auth is an open source authentication application for CodeIgniter 3
- *
- * @package     Community Auth
- * @author      Robert B Gottier
- * @copyright   Copyright (c) 2011 - 2018, Robert B Gottier. (http://brianswebdesign.com/)
- * @license     BSD - http://www.opensource.org/licenses/BSD-3-Clause
- * @link        http://community-auth.com
- */
 ?>
-
-<h1>Account Recovery</h1>
-
 <?php
 if( isset( $disabled ) )
 {
 	echo '
-		<div style="border:1px solid red;">
+		<div class="alert alert-danger">
 			<p>
 				Account Recovery is Disabled.
 			</p>
@@ -37,7 +43,7 @@ if( isset( $disabled ) )
 else if( isset( $banned ) )
 {
 	echo '
-		<div style="border:1px solid red;">
+		<div class="alert alert-danger">
 			<p>
 				Account Locked.
 			</p>
@@ -54,33 +60,21 @@ else if( isset( $banned ) )
 else if( isset( $confirmation ) )
 {
 	echo '
-		<div style="border:1px solid green;">
-			<p>
-				Congratulations, you have created an account recovery link.
-			</p>
-			<p>
-				<b>Please note</b>: The account recovery link would normally be placed in an email, 
-				and you would not see it here on the screen. This is to limit the code in the 
-				Examples controller, and keep your focus on learning Community Auth, but give you 
-				an idea of how to implement account recovery. <b>When you do end up writing code to send 
-				the recovery link to an email address, you will want to delete it from this view, 
-				delete these instructions, and instead have a simple message similar to the following</b>:
-			</p>
+		<div class="alert alert-success">
+		
+			
 			<p>
 				"We have sent you an email with instructions on how 
 				to recover your account."
 			</p>
-			<p>
-				This is the account recovery link:
-			</p>
-			<p>' . $special_link . '</p>
+			
 		</div>
 	';
 }
 else if( isset( $no_match ) )
 {
 	echo '
-		<div  style="border:1px solid red;">
+		<div class="alert alert-danger">
 			<p class="feedback_header">
 				Supplied email did not match any record.
 			</p>
@@ -91,15 +85,6 @@ else if( isset( $no_match ) )
 }
 else
 {
-	echo '
-		<p>
-			If you\'ve forgotten your password and/or username, 
-			enter the email address used for your account, 
-			and we will send you an e-mail 
-			with instructions on how to access your account.
-		</p>
-	';
-
 	$show_form = 1;
 }
 if( isset( $show_form ) )
@@ -109,33 +94,22 @@ if( isset( $show_form ) )
 		 <?php echo form_open(); ?>
 			<div>
 				<fieldset>
-					<legend>Enter your account's email address:</legend>
-					<div>
-
-						<?php
-							// EMAIL ADDRESS *************************************************
-							echo form_label('Email Address','email', ['class'=>'form_label'] );
-
-							$input_data = [
-								'name'		=> 'email',
-								'id'		=> 'email',
-								'class'		=> 'form_input',
-								'maxlength' => 255
-							];
-							echo form_input($input_data);
-						?>
-
-					</div>
+					
+                              <div class="form-group">
+                                    <div class="col-xs-12">
+                                        <input class="form-control" name="email" type="email" required="" placeholder="Enter Email"> </div>
+                                </div>
 				</fieldset>
 				<div>
-					<div>
+                                    <div class="">
 
 						<?php
 							// SUBMIT BUTTON **************************************************************
 							$input_data = [
 								'name'  => 'submit',
 								'id'    => 'submit_button',
-								'value' => 'Send Email'
+								'value' => 'Send Email',
+                                                                'class' => 'btn btn-success btn-rounded'
 							];
 							echo form_submit($input_data);
 						?>
@@ -143,9 +117,23 @@ if( isset( $show_form ) )
 					</div>
 				</div>
 			</div>
+                        
+                 <br />
+                 <div class="form-group row">
+                            <div class="col-md-12">
+                                <a href="<?php echo base_url(LOGIN_PAGE)?>" title="Sign In" class="text-dark pull-left">
+                                        <i class="fa fa-lock m-r-5"></i> Login</a> 
+                                    
+                                    <a href="<?php echo base_url('app/register')?>" title="Register" class="text-success pull-right">
+                                        <i class="fa fa-user m-r-5"></i> Register</a> 
+                                </div> 
+                            </div>
 		</form>
-
-	<?php
-}
-/* End of file recover_form.php */
-/* Location: /community_auth/views/auth/recover_form.php */
+                 
+<?php }?>
+	
+                    </div>
+                </div>
+            </div>
+    
+   

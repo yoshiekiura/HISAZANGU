@@ -1,29 +1,55 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-   
-class App extends My_Controller
+
+/**
+ * Community Auth - Examples Controller
+ *
+ * Community Auth is an open source authentication application for CodeIgniter 3
+ *
+ * @package     Community Auth
+ * @author      Robert B Gottier
+ * @copyright   Copyright (c) 2011 - 2018, Robert B Gottier. (http://brianswebdesign.com/)
+ * @license     BSD - http://www.opensource.org/licenses/BSD-3-Clause
+ * @link        http://community-auth.com
+ */
+
+class App extends MY_Controller
 {
+	public function __construct()
+	{
+		parent::__construct();
 
-    public function __construct()
-    {
-        parent:: __construct();
+		// Force SSL
+		//$this->force_ssl();
+
+		// Form and URL helpers always loaded (just for convenience)
+		$this->load->helper('url');
+		$this->load->helper('form');
+	}
+
+	// -----------------------------------------------------------------------
+
+	/**
+	 * Demonstrate being redirected to login.
+	 * If you are logged in and request this method,
+	 * you'll see the message, otherwise you will be
+	 * shown the login form. Once login is achieved,
+	 * you will be redirected back to this method.
+	 */
+	public function index()
+	{
+               if($this->require_min_level(1))
+                {
+                 redirect(base_url($this->auth_role.'/dashboard'));
+                }
+              else
+               {
+                  $this->logout();
+               }
+        }
       
-    }
-    
-    
-    public function index()
-    {
-      if($this->require_min_level(1))
-      {
-       redirect(base_url($this->auth_role.'/dashboard'));
-      }
-      else{
-          $this->logout();
-      }
-    }
 
-    
-    public function login()
+	public function login()
 	{
 		// Method should not be directly accessible
 		if( $this->uri->uri_string() == 'app/login')
@@ -33,20 +59,33 @@ class App extends My_Controller
 			$this->require_min_level(1);
 
 		$this->setup_login_form();
-//              $this->load->view('auth/header');
+
+		$this->load->view('auth/header');
 		$this->load->view('auth/login');
-//              $this->load->view('auth/footer');
+		$this->load->view('auth/footer');
+
+		
 	}
-        
-         
-       public function register()
+
+	// --------------------------------------------------------------
+
+	/**
+	 * Log out
+	 */
+	public function logout()
 	{
-            $this->load->view('auth/header');
-            $this->load->view('auth/register');
-            $this->load->view('auth/footer');
+		$this->authentication->logout();
+		$redirect_protocol = USE_SSL ? 'https' : NULL;
+
+		redirect(base_url(LOGIN_PAGE));
 	}
-        
-        public function recover()
+
+	// --------------------------------------------------------------
+
+	/**
+	 * User recovery form
+	 */
+         public function recover()
 	{
 		// Load resources
 		$this->load->model('auth/app_model');
@@ -131,9 +170,16 @@ class App extends My_Controller
             $this->load->view('auth/footer');
 		
 	}
-        
-        
-        public function recovery_verification( $user_id = '', $recovery_code = '' )
+
+	// --------------------------------------------------------------
+
+	/**
+	 * Verification of a user by email for recovery
+	 * 
+	 * @param  int     the user ID
+	 * @param  string  the passwd recovery code
+	 */
+	public function recovery_verification( $user_id = '', $recovery_code = '' )
 	{
 		/// If IP is on hold, display message
 		if( $on_hold = $this->authentication->current_hold_status( TRUE ) )
@@ -205,17 +251,5 @@ class App extends My_Controller
 		$this->load->view('auth/choose_password_form', $view_data);
                 $this->load->view('auth/footer');
 	}
-        
-       
-        
-        
-        public function logout()
-	{
-		$this->authentication->logout();
-
-		// Set redirect protocol
-		$redirect_protocol = USE_SSL ? 'https' : NULL;
-
-		redirect(base_url(LOGIN_PAGE));
-	}
 }
+

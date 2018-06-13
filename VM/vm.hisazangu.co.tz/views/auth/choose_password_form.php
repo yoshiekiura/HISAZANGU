@@ -1,20 +1,29 @@
+
+<body class="skin-default-dark card-no-border">
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">Hisa Zangu</p>
+        </div>
+    </div>
+  
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <section id="wrapper">
+        <div class="login-register" style="background-image:url(<?php echo base_url();?>resources/assets/images/background/login-register.jpg);">
+            <div class="login-box card">
+                <div class="card-body">
+                    
+<!--<form class="form-horizontal form-material" id="loginform" >-->
+<h3 class="box-title m-b-20">Recovery Account</h3>
+                   
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
-/**
- * Community Auth - Choose Password Form View
- *
- * Community Auth is an open source authentication application for CodeIgniter 3
- *
- * @package     Community Auth
- * @author      Robert B Gottier
- * @copyright   Copyright (c) 2011 - 2018, Robert B Gottier. (http://brianswebdesign.com/)
- * @license     BSD - http://www.opensource.org/licenses/BSD-3-Clause
- * @link        http://community-auth.com
- */
 ?>
-
-<h1>Account Recovery - Stage 2</h1>
 
 <?php
 
@@ -23,7 +32,7 @@ $showform = 1;
 if( isset( $validation_errors ) )
 {
 	echo '
-		<div style="border:1px solid red;">
+		<div class="alert alert-danger">
 			<p>
 				The following error occurred while changing your password:
 			</p>
@@ -44,7 +53,7 @@ else
 if( isset( $validation_passed ) )
 {
 	echo '
-		<div style="border:1px solid green;">
+		<div class="alert alert-success">
 			<p>
 				You have successfully changed your password.
 			</p>
@@ -59,7 +68,7 @@ if( isset( $validation_passed ) )
 if( isset( $recovery_error ) )
 {
 	echo '
-		<div style="border:1px solid red;">
+		<div class="alert alert-danger">
 			<p>
 				No usable data for account recovery.
 			</p>
@@ -67,7 +76,7 @@ if( isset( $recovery_error ) )
 				Account recovery links expire after 
 				' . ( (int) config_item('recovery_code_expiration') / ( 60 * 60 ) ) . ' 
 				hours.<br />You will need to use the 
-				<a href="/auth/recover">Account Recovery</a> form 
+				<a href="/app/recover">Account Recovery</a> form 
 				to send yourself a new link.
 			</p>
 		</div>
@@ -78,7 +87,7 @@ if( isset( $recovery_error ) )
 if( isset( $disabled ) )
 {
 	echo '
-		<div style="border:1px solid red;">
+		<div class="alert alert-danger">
 			<p>
 				Account recovery is disabled.
 			</p>
@@ -102,8 +111,7 @@ if( $showform == 1 )
 			if( isset( $username ) )
 			{
 				echo '<p>
-					Your login user name is <i>' . $username . '</i><br />
-					Please write this down, and change your password now:
+					Username: <b>' . $username . '</b><br />
 				</p>';
 			}
 			else
@@ -112,43 +120,21 @@ if( $showform == 1 )
 			}
 		}
 
-		?>
+		?> 
 			<div id="form">
 				<?php echo form_open(); ?>
 					<fieldset>
-						<legend>Step 2 - Choose your new password</legend>
-						<div>
-
-							<?php
-								// PASSWORD LABEL AND INPUT ********************************
-								echo form_label('Password','passwd', ['class'=>'form_label']);
-
-								$input_data = [
-									'name'       => 'passwd',
-									'id'         => 'passwd',
-									'class'      => 'form_input password',
-									'max_length' => config_item('max_chars_for_password')
-								];
-								echo form_password($input_data);
-							?>
-
-						</div>
-						<div>
-
-							<?php
-								// CONFIRM PASSWORD LABEL AND INPUT ******************************
-								echo form_label('Confirm Password','passwd_confirm', ['class'=>'form_label']);
-
-								$input_data = [
-									'name'       => 'passwd_confirm',
-									'id'         => 'passwd_confirm',
-									'class'      => 'form_input password',
-									'max_length' => config_item('max_chars_for_password')
-								];
-								echo form_password($input_data);
-							?>
-
-						</div>
+						
+						<div class="form-group">
+                                                    <div class="col-xs-12">
+                                                        <input class="form-control" name="passwd" type="password" required="" placeholder="New Password"> </div>
+                                                </div>
+						
+                                                <div class="form-group">
+                                                    <div class="col-xs-12">
+                                                        <input class="form-control" name="passwd_confirm" type="password" required="" placeholder="Confirm Password"> </div>
+                                                </div>
+                                            
 					</fieldset>
 					<div>
 						<div>
@@ -164,17 +150,35 @@ if( $showform == 1 )
 								$input_data = [
 									'name'  => 'form_submit',
 									'id'    => 'submit_button',
-									'value' => 'Change Password'
+									'value' => 'Change Password',
+                                                                        'class' => 'btn btn-success'
 								];
 								echo form_submit($input_data);
 							?>
 
 						</div>
 					</div>
+                            <br />
+                            <div class="form-group row">
+                            <div class="col-md-12">
+                                <a href="<?php echo base_url('app/register')?>" title="Register" class="text-info pull-left">
+                                        <i class="fa fa-user m-r-5"></i> Register</a>
+                                        
+                                <a href="<?php echo base_url(LOGIN_PAGE)?>" title="Sign In" class="text-success pull-right">
+                                        <i class="fa fa-lock m-r-5"></i> Login</a> 
+                                   
+                                </div> 
+                            </div>
+                            
 				</form>
 			</div>
 		<?php
-	}
+	}  
 }
-/* End of file choose_password_form.php */
-/* Location: /community_auth/views/auth/choose_password_form.php */
+?>
+                   </div>
+                </div>
+
+            </div>
+        </div>
+    </div>

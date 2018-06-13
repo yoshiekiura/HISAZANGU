@@ -13,10 +13,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @link        http://community-auth.com
  */
 
-require_once APPPATH . 'third_party/community_auth/core/Auth_Controller.php';
+require_once APPPATH . 'third_party/auth/core/Auth_Controller.php';
 
 class MY_Controller extends Auth_Controller
-{
+{ 
 	/**
 	 * Class constructor
 	 */
@@ -27,4 +27,4 @@ class MY_Controller extends Auth_Controller
 }
 
 /* End of file MY_Controller.php */
-/* Location: /community_auth/core/MY_Controller.php */
+/* Location: /auth/core/MY_Controller.php */

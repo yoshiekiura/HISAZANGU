@@ -1,40 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url();?>resources/assets/images/favicon.png">
-    <title>Elite Admin Template - The Ultimate Multipurpose admin template</title>
-    
-    <!-- page css -->
-    <link href="<?php echo base_url();?>resources/dist/css/pages/login-register-lock.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="<?php echo base_url();?>resources/dist/css/style.min.css" rel="stylesheet">
-    
-    
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
-</head>
 
-<body class="skin-purple card-no-border">
+<body class="skin-default-dark card-no-border">
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
     <!-- ============================================================== -->
     <div class="preloader">
         <div class="loader">
             <div class="loader__figure"></div>
-            <p class="loader__label">Elite admin</p>
+            <p class="loader__label">Hisa Zangu</p>
         </div>
     </div>
+  
     <!-- ============================================================== -->
     <!-- Main wrapper - style you can find in pages.scss -->
     <!-- ============================================================== -->
@@ -42,92 +17,110 @@
         <div class="login-register" style="background-image:url(<?php echo base_url();?>resources/assets/images/background/login-register.jpg);">
             <div class="login-box card">
                 <div class="card-body">
-                    <form class="form-horizontal form-material" id="loginform" action="index.html">
+<!--                    <form class="form-horizontal form-material" id="loginform" action="index.html">-->
                         <h3 class="box-title m-b-20">Sign In</h3>
-                        <div class="form-group ">
+ <?php
+
+if( ! isset( $on_hold_message ) )
+{
+	if( isset( $login_error_mesg ) )
+	{
+		echo '
+			<div class="alert alert-danger">
+				<p>
+					Invalid Username, Email Address, or Password.
+				</p>
+			
+			</div>
+		';
+	}
+
+
+	echo form_open( $login_url, ['class' => 'std-form'] ); 
+?>
+
+	<div>
+
+		<div class="form-group ">
                             <div class="col-xs-12">
-                                <input class="form-control" type="text" required="" placeholder="Username"> </div>
-                        </div>
-                        <div class="form-group">
+                                <input class="form-control" type="text" name="login_string" required="" placeholder="Username"> </div>
+                </div>
+
+		<br /> 
+
+		<div class="form-group">
                             <div class="col-xs-12">
-                                <input class="form-control" type="password" required="" placeholder="Password"> </div>
-                        </div>
-                        <div class="form-group row">
+                                <input class="form-control" name="login_pass" type="password" required="" placeholder="Password"> </div>
+                </div>
+
+
+		<?php
+			if( config_item('allow_remember_me') )
+			{
+		?>
+
+			<br />
+
+			<label for="remember_me" class="form_label">Remember Me</label>
+			<input type="checkbox" id="remember_me" name="remember_me" value="yes" />
+
+		<?php
+			}
+		?>
+
+		<p>
+			<?php
+				$link_protocol = USE_SSL ? 'https' : NULL;
+			?>
+                    
+                 <button name="submit" class="btn btn-block btn-lg btn-info btn-rounded" type="submit">Log In</button>
+                 
+                 <div class="form-group row">
                             <div class="col-md-12">
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                    <label class="custom-control-label" for="customCheck1">Remember me</label>
-                                    <a href="javascript:void(0)" id="to-recover" class="text-dark pull-right"><i class="fa fa-lock m-r-5"></i> Forgot pwd?</a> 
+                                <a href="<?php echo base_url('app/recover')?>" title="Can't access your account?" class="text-dark pull-left">
+                                        <i class="fa fa-lock m-r-5"></i> Forgot password?</a> 
+                                    
+                                    <a href="<?php echo base_url('app/register')?>" title="Register" class="text-success pull-right">
+                                        <i class="fa fa-user m-r-5"></i> Sign Up</a> 
                                 </div> 
                             </div>
                         </div>
-                        <div class="form-group text-center">
-                            <div class="col-xs-12 p-b-20">
-                                <button class="btn btn-block btn-lg btn-info btn-rounded" type="submit">Log In</button>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-12 m-t-10 text-center">
-                                <div class="social">
-                                    <a href="javascript:void(0)" class="btn  btn-facebook" data-toggle="tooltip" title="Login with Facebook"> <i aria-hidden="true" class="fa fa-facebook"></i> </a>
-                                    <a href="javascript:void(0)" class="btn btn-googleplus" data-toggle="tooltip" title="Login with Google"> <i aria-hidden="true" class="fa fa-google-plus"></i> </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group m-b-0">
-                            <div class="col-sm-12 text-center">
-                                Don't have an account? <a href="pages-register.html" class="text-info m-l-5"><b>Sign Up</b></a>
-                            </div>
-                        </div>
-                    </form>
-                    <form class="form-horizontal" id="recoverform" action="index.html">
-                        <div class="form-group ">
-                            <div class="col-xs-12">
-                                <h3>Recover Password</h3>
-                                <p class="text-muted">Enter your Email and instructions will be sent to you! </p>
-                            </div>
-                        </div>
-                        <div class="form-group ">
-                            <div class="col-xs-12">
-                                <input class="form-control" type="text" required="" placeholder="Email"> </div>
-                        </div>
-                        <div class="form-group text-center m-t-20">
-                            <div class="col-xs-12">
-                                <button class="btn btn-primary btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Reset</button>
-                            </div>
-                        </div>
-                    </form>
+       </div>
+
+
+</form>
+
+<?php
+
+	}
+	else
+	{
+		// EXCESSIVE LOGIN ATTEMPTS ERROR MESSAGE
+		echo '
+			<div class="alert alert-danger">
+				<p>
+					Excessive Login Attempts
+				</p>
+				<p>
+					You have exceeded the maximum number of failed login<br />
+					attempts that this website will allow.
+				<p>
+				<p>
+					Your access to login and account recovery has been blocked for ' . ( (int) config_item('seconds_on_hold') / 60 ) . ' minutes.
+				</p>
+				<p>
+					Please use the <a href="/app/recover">Account Recovery</a> after ' . ( (int) config_item('seconds_on_hold') / 60 ) . ' minutes has passed,<br />
+					or contact us if you require assistance gaining access to your account.
+				</p>
+			</div>
+		';
+	}
+?> 
+    
+                        
+                  
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- ============================================================== -->
-    <!-- End Wrapper -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- All Jquery -->
-    <!-- ============================================================== -->
-    <script src="<?php echo base_url();?>resources/assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
-    <!-- Bootstrap tether Core JavaScript -->
-    <script src="<?php echo base_url();?>resources/assets/node_modules/popper/popper.min.js"></script>
-    <script src="<?php echo base_url();?>resources/assets/node_modules/bootstrap/<?php echo base_url();?>resources/dist/js/bootstrap.min.js"></script>
-    <!--Custom JavaScript -->
-    <script type="text/javascript">
-        $(function() {
-            $(".preloader").fadeOut();
-        });
-        $(function() {
-            $('[data-toggle="tooltip"]').tooltip()
-        });
-        // ============================================================== 
-        // Login and Recover Password 
-        // ============================================================== 
-        $('#to-recover').on("click", function() {
-            $("#loginform").slideUp();
-            $("#recoverform").fadeIn();
-        });
-    </script>
-    
-</body>
-</html>
+  
