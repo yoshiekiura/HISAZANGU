@@ -29,18 +29,7 @@
 <![endif]-->
 </head>
 
-<body class="skin-megna fixed-layout">
-    <!-- ============================================================== -->
-    <!-- Preloader - style you can find in spinners.css -->
-    <!-- ============================================================== -->
-    <div class="preloader">
-        <div class="loader">
-            <div class="loader__figure"></div>
-            <p class="loader__label text-dark"><?php echo config_item('application_name');?></p>
-        </div>
-    </div>
-    <!-- ============================================================== -->
-    <!-- Main wrapper - style you can find in pages.scss -->
+<body class="skin-megna fixed-layout mini-sidebar">
     <!-- ============================================================== -->
     <div id="main-wrapper">
         <!-- ============================================================== -->
@@ -53,8 +42,7 @@
                 <!-- ============================================================== -->
                 <div class="navbar-header">
                     <a class="navbar-brand" href="<?php echo base_url('app');?>">
-                        <!-- Logo icon --><b>
-                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                        <b>
                             <!-- Dark Logo icon -->
                             <img src="<?php echo base_url('resources/assets/');?>images/logoicon.png" alt="homepage" class="dark-logo" />
                             <!-- Light Logo icon -->
