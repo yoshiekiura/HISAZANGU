@@ -1,4 +1,10 @@
-  <div class="page-wrapper">
+ <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label text-dark">Loading dashboard...</p>
+        </div>
+    </div>  
+<div class="page-wrapper">
             <!-- ============================================================== -->
             <!-- Container fluid  -->
             <!-- ============================================================== -->
@@ -171,3 +177,16 @@
             <!-- End Container fluid  -->
             <!-- ============================================================== -->
         </div>
+<?php include 'footer.php';?>
+ <!-- ============================================================== -->
+    <!--morris JavaScript -->
+    <script src="<?php echo base_url('resources/assets/');?>node_modules/raphael/raphael-min.js"></script>
+    <script src="<?php echo base_url('resources/assets/');?>node_modules/morrisjs/morris.min.js"></script>
+    <script src="<?php echo base_url('resources/assets/');?>node_modules/jquery-sparkline/jquery.sparkline.min.js"></script>
+    <!-- Popup message jquery -->
+    <script src="<?php echo base_url('resources/assets/');?>node_modules/toast-master/js/jquery.toast.js"></script>
+    <!-- Chart JS -->
+    <script src="<?php echo base_url('resources/template/');?>js/dashboard.js"></script>
+    <script src="<?php echo base_url('resources/assets/');?>node_modules/toast-master/js/jquery.toast.js"></script>
+</body>
+</html>
