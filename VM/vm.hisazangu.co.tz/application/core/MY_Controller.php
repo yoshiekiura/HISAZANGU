@@ -20,10 +20,26 @@ class MY_Controller extends Auth_Controller
 	/**
 	 * Class constructor
 	 */
-	public function __construct()
+        public $profile_data;
+        
+        public function __construct()
 	{
 		parent::__construct();
+                $this->public_profile_data();
+                
 	}
+        
+        public function public_profile_data() {
+            $this->is_logged_in();
+            $this->profile_data = $this->global_modal->public_profile_data($this->auth_user_id);
+            
+            $data['profile_data'] = $this->profile_data;
+            $this->load->vars($data);
+            
+            $this->config->set_item('profile_data', $this->profile_data);
+            
+        }
+         
 }
 
 /* End of file MY_Controller.php */

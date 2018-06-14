@@ -14,14 +14,13 @@
                             <a href="javascript:void(0)" class="dropdown-toggle u-dropdown link hide-menu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $this->auth_username;?> <span class="caret"></span></a>
                             <div class="dropdown-menu animated flipInY">
                                 <!-- text-->
-                                <a href="<?php echo base_url('admin/profile'); ?>" class="dropdown-item"><i class="ti-user"></i> My Profile</a>
+                                <a href="<?php echo base_url('client/profile'); ?>" class="dropdown-item"><i class="ti-user"></i> My Profile</a>
                                 <!-- text-->
                                 <a href="javascript:void(0)" class="dropdown-item"><i class="ti-wallet"></i> My Balance</a>
                                 <!-- text-->
                                 <a href="javascript:void(0)" class="dropdown-item"><i class="ti-email"></i> Inbox</a>
                                 <!-- text-->
-                                <a href="<?php echo base_url('admin/profile/settings'); ?>" class="dropdown-item"><i class="ti-settings"></i> Profile Settings</a>
-                                
+                                <a href="<?php echo base_url('client/profile/settings'); ?>" class="dropdown-item"><i class="ti-settings"></i> Profile Settings</a>
                                 
                                 <div class="dropdown-divider"></div>
                                 <!-- text-->
@@ -34,25 +33,32 @@
                 <!-- Sidebar navigation-->
            <nav class="sidebar-nav">
                     <ul id="sidebarnav">
+
                         <li>
-                            <a class="waves-effect waves-dark" href="<?php echo base_url('admin/dashboard'); ?>" aria-expanded="false">
+                            <a class="waves-effect waves-dark" href="<?php echo base_url('client/dashboard'); ?>" aria-expanded="false">
                                 <i class="icon-speedometer"></i>
                                 <span class="hide-menu">Dashboard</span>
                             </a>
                         </li>
-                      
-                        <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                             <i class="ti-settings"></i><span class="hide-menu">Brokers</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="#">Overview</a></li>
-                                <li><a href="#">Registration</a></li>
-                            </ul>
+                        
+                        <li>
+                            <a class="waves-effect waves-dark" href="#" aria-expanded="false">
+                                <i class="fa fa-bank"></i>
+                                <span class="hide-menu">Companies</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a class="waves-effect waves-dark" href="#" aria-expanded="false">
+                                <i class="fa fa-users"></i>
+                                <span class="hide-menu">Shareholders</span>
+                            </a>
                         </li>
                         
                         <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="ti-settings"></i><span class="hide-menu">Settings</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="#">System</a></li>
-                            </ul>
+                             </ul>
                         </li>
 
                        

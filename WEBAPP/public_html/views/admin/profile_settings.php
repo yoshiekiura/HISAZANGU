@@ -21,9 +21,9 @@
                             <div class="row">
                                 <div class="col-md-4">
                                 <div class="form-group">
-                                     <div class="controls">
+                                     <div class="controls"> 
                                          <input maxlength="30" value="<?php echo $profile_data->firstname;?>" type="text" name="firstname" id="field-4" placeholder="First name" class="form-control">
-                                        </div>
+                                        </div> 
                                     </div>
                                 </div>
                                     
