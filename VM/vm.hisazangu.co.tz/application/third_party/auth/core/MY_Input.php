@@ -19,7 +19,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * We are also going to encrypt and decrypt cookies if the session is being encrypted.
  */
 
-class MY_Input extends CI_Input {
+class MY_Input extends CI_Input { 
 
 	/**
 	 * Constructor
@@ -150,4 +150,4 @@ class MY_Input extends CI_Input {
 }
 
 /* End of file MY_Input.php */
-/* Location: /community_auth/core/MY_Input.php */ 
+/* Location: /auth/core/MY_Input.php */ 

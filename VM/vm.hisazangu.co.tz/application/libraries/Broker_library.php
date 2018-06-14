@@ -7,9 +7,9 @@
  */
 
 /**
- * Description of Broker_library
+ * Description of Admin_library
  *
- * @author Sarah Daniel
+ * @author test
  */
 class Broker_library {
     protected  $CI;
@@ -20,9 +20,9 @@ class Broker_library {
     }
     
     public function account_balance($key) {
-        $account = $this->CI->broker_model->account(trim($key));
+        $account = $this->CI->admin_model->account(trim($key));
             if($account):
-                return $this->CI->broker_model->account_balance($account->account_key);
+                return $this->CI->admin_model->account_balance($account->account_key);
             else:
                 return 0;
             endif;  

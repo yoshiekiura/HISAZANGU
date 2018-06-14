@@ -17,29 +17,27 @@ class Profile extends MY_Controller {
     {
         parent::__construct();
         
-        ( $this->require_role('broker'));
+        ( $this->require_role('admin'));
         
-        $this->load->model('broker_model');
-        $this->load->library('broker_library');
-        $this->load->helper('broker');
+        $this->load->model('admin_model');
+        $this->load->library('admin_library');
+        $this->load->helper('admin');
     }
     
      
      public function index()
-//       This function loads the broker's profile view
         {
-            $this->load->view('broker/hor_view');
-            $this->load->view('broker/ver_view');
-            $this->load->view('broker/profile');
-            $this->load->view('broker/footer_view');
+            $this->load->view('admin/top_bar');
+            $this->load->view('admin/side_bar');
+            $this->load->view('admin/profile');
+            $this->load->view('admin/footer');
         }
         
         public function settings()
- //       This function loads the broker's settings view
         {       
-            $this->load->view('broker/hor_view');
-            $this->load->view('broker/ver_view');
-            $this->load->view('broker/profile_settings');
-            $this->load->view('broker/footer_view');
+            $this->load->view('admin/top_bar');
+            $this->load->view('admin/side_bar');
+            $this->load->view('admin/profile_settings');
+            $this->load->view('admin/footer');
         }
 }

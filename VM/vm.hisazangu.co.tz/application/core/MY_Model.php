@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  */
 
 class MY_Model extends CI_Model
-{
+{ 
 	/**
 	 * ACL for a logged in user
 	 * @var mixed
