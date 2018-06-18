@@ -44,8 +44,8 @@
                         <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                              <i class="ti-settings"></i><span class="hide-menu">Brokers</span></a>
                             <ul aria-expanded="false" class="collapse">
-                                <li><a href="#">Overview</a></li>
-                                <li><a href="#">Registration</a></li>
+                                <li><a href="<?php echo base_url('admin/broker'); ?>">Overview</a></li>
+                                <li><a href="<?php echo base_url('admin/broker/register'); ?>">Registration</a></li>
                             </ul>
                         </li>
                         

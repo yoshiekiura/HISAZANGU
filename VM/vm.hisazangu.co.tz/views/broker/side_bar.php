@@ -35,21 +35,21 @@
                     <ul id="sidebarnav">
 
                         <li>
-                            <a class="waves-effect waves-dark" href="<?php echo base_url('dashboard/dashboard'); ?>" aria-expanded="false">
+                            <a class="waves-effect waves-dark" href="<?php echo base_url('broker/dashboard'); ?>" aria-expanded="false">
                                 <i class="icon-speedometer"></i>
                                 <span class="hide-menu">Dashboard</span>
                             </a>
                         </li>
-                        
+                         
                         <li>
-                            <a class="waves-effect waves-dark" href="#" aria-expanded="false">
+                            <a class="waves-effect waves-dark" href="<?php echo base_url('broker/companies'); ?>" aria-expanded="false">
                                 <i class="fa fa-bank"></i>
                                 <span class="hide-menu">Companies</span>
                             </a>
                         </li>
                         
                         <li>
-                            <a class="waves-effect waves-dark" href="#" aria-expanded="false">
+                            <a class="waves-effect waves-dark" href="<?php echo base_url('broker/shareholders'); ?>" aria-expanded="false">
                                 <i class="fa fa-users"></i>
                                 <span class="hide-menu">Shareholders</span>
                             </a>

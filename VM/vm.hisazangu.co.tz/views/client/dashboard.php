@@ -114,7 +114,7 @@
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="font-light m-t-0"">Recent News</h4>
+                                <h4 class="font-light m-t-0"">Recent News</h4> 
                             </div>
                             <!-- ============================================================== -->
                             <!-- Comment widgets -->

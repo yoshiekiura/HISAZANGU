@@ -18,17 +18,13 @@ class App extends MY_Controller
 	public function __construct()
 	{
 		parent::__construct();
+                
+                $this->load->model('global_modal','brokerm');
+                $this->load->library('app_library');
 
-		// Force SSL
-		//$this->force_ssl();
-
-		// Form and URL helpers always loaded (just for convenience)
 		$this->load->helper('url');
 		$this->load->helper('form');
 	}
-
-	// -----------------------------------------------------------------------
-
 	/**
 	 * Demonstrate being redirected to login.
 	 * If you are logged in and request this method,
@@ -65,6 +61,50 @@ class App extends MY_Controller
 		$this->load->view('auth/footer');
 
 		
+	}
+        
+//     This function is used for registration of clients(shareholders)  
+       public function register()
+	{
+            if(strtolower($this->input->server('REQUEST_METHOD')) == 'post')
+           {
+             $data = array
+             (
+               
+               'firstname' => $this->input->post('firstname'),
+               'middlename' => $this->input->post('middlename'),
+               'lastname' => $this->input->post('lastname'),
+               'address_primary' => $this->input->post('address_primary'),
+               'occupation' => $this->input->post('occupation'),
+               'nationality' => $this->input->post('nationality'),
+               'phonenumber' => $this->input->post('phonenumber'),
+               'bank' => $this->input->post('bank'),
+               'account' => $this->input->post('account'),
+               'branch' => $this->input->post('branch'),
+               'idtype' => $this->input->post('idtype'),
+               'idnumber' => $this->input->post('idnumber'),
+               'email' => $this->input->post('email'),
+               'auth_level' => 6,
+               'username' => $this->input->post('username'),
+               'passwd' => $this->authentication->hash_passwd($this->input->post('passwd'))
+             ); 
+             
+             if($this->app_library->register_client())
+                 {
+                    $this->brokerm->client_register($data); 
+                    $errors['success'] = 'Successfuly Registered'; 
+                    $this->load->vars($errors);
+                }
+             else
+               { 
+                    $errors['errors'] = validation_errors(); 
+                    $this->load->vars($errors);
+               }
+              } 
+		$this->load->view('auth/header');
+		$this->load->view('auth/register');
+		$this->load->view('auth/footer');
+
 	}
 
 	// --------------------------------------------------------------

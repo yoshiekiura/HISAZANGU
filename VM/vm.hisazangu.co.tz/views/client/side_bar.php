@@ -41,7 +41,7 @@
                             </a>
                         </li>
                         
-                        <li>
+                         <li>
                             <a class="waves-effect waves-dark" href="#" aria-expanded="false">
                                 <i class="fa fa-bank"></i>
                                 <span class="hide-menu">Companies</span>

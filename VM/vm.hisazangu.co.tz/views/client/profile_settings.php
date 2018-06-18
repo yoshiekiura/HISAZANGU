@@ -58,7 +58,7 @@
                                 <br/>
                             </div>
                         </div>
-                    </div>
+                    </div> 
                     <!-- Column -->
                     <!-- Column -->
                     <div class="col-lg-8 col-xlg-9 col-md-7">

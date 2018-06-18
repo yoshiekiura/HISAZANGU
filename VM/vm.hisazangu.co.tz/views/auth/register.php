@@ -1,213 +1,244 @@
 
-<!-- BEGIN BODY -->
-
-<body class=" login_page">
- 
- 
-    <div class="container-fluid">
-        <div class="login-wrapper row">
-            <div id="login" class="login loginpage col-lg-offset-2 col-md-offset-3 col-sm-offset-3 col-xs-offset-0 col-xs-12 col-sm-6 col-lg-8">    
-                <div class="login-form-header">
-                     <img src="<?php echo base_url();?>resources/data/icons/signup.png" alt="login-icon" style="max-width:64px">
-                     <div class="login-header">
-                         <h4 class="bold color-white">Signup Now!</h4>
-                         <h4><small>Please enter your data to register.</small></h4>
-                     </div>
-                </div>
-               
-                <div class="box login">
-
-                    <div class="content-body" style="padding-top:30px">
-
-                        <form >
-                            <div class="row">
-                                <div class="col-xs-12">
-
-                                    <div class="col-lg-4 no-pl">
-                                        <div class="form-group">
-                                            <label class="form-label">FIRST NAME</label>
-                                            <div class="controls">
-                                                 <input  class="form-control" id="field-12" placeholder=" " name="fname">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col-lg-4 no-pl">
-                                        <div class="form-group">
-                                            <label class="form-label">MIDDLE NAME</label>
-                                            <div class="controls">
-                                                 <input  class="form-control" id="field-12" placeholder=" " name="mname">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-4 no-pr">
-                                        <div class="form-group">
-                                            <label class="form-label">LAST NAME</label>
-                                            <div class="controls">
-                                                 <input  class="form-control" id="field-12" placeholder=" " name="lname">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> 
-                            
-                            
-                            
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="form-group">
-                                            <label class="form-label">Address</label>
-                                            <div class="controls">
-                                                <textarea class="form-control autogrow" placeholder="" name="address" id="field-7"></textarea>
-                                            </div>
-                                        </div>
-                                </div>
-                            </div>
-                             
-                            
-                            
-                             <div class="row">
-                             <div class="col-xs-12">
-                                      <div class="col-lg-4 no-pl">
-                                        <div class="form-group">
-                                            <label class="form-label">PHONE NUMBER</label>
-                                            <div class="controls">
-                                                 <input  class="form-control" id="field-12" placeholder=" " name="phone">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-4 no-pr">
-                                        <div class="form-group">
-                                            <label class="form-label">EMAIL</label>
-                                            <div class="controls">
-                                                 <input  class="form-control" id="field-12" placeholder=" " name="email">
-                                            </div>
-                                        </div>
-                                    </div>
-                                 
-                                    <div class="col-lg-4 no-pr">
-                                        <div class="form-group">
-                                            <label class="form-label">OCCUPATION</label>
-                                            <div class="controls">
-                                                 <input  class="form-control" id="field-12" placeholder=" " name="occupation">
-                                            </div>
-                                        </div>
-                                    </div>
-                             </div>
-                             </div>
-                            
-                            
-                            
-                            
-                                    
-                             <div class="row">
-                             <div class="col-xs-12">
-                                      <div class="col-lg-4 no-pl">
-                                        <div class="form-group">
-                                            <label class="form-label">NATIONALITY</label>
-                                            <div class="controls">
-                                              <select class="form-control" name="nationality">
-                                                <option value="">-- select one --</option>
-                                                <option value="tanzanian">Tanzanian</option>
-                                              </select> 
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-4 no-pr">
-                                        <div class="form-group">
-                                            <label class="form-label">ID TYPE</label>
-                                            <div class="controls">
-                                                <select class="form-control" name="idtype">
-                                                    <option value="">-- select one --</option>
-                                                    <option>Passport</option>
-                                                    <option>National ID</option>
-                                                    <option>Driving license</option>
-                                                    <option>Voting ID</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                 
-                                    <div class="col-lg-4 no-pr">
-                                        <div class="form-group">
-                                            <label class="form-label">ID NUMBER</label>
-                                            <div class="controls">
-                                                 <input  class="form-control" id="field-12" placeholder=" " name="idno">
-                                            </div>
-                                        </div>
-                                    </div>
-                             </div>
-                             </div>
-                            
-                            
-                            <div class="row">
-                             <div class="col-xs-12">
-                                      <div class="col-lg-4 no-pl">
-                                        <div class="form-group">
-                                            <label class="form-label">BANK NAME</label>
-                                            <div class="controls">
-                                                <select class="form-control" name="bank">
-                                                    <option value="">-- select one --</option>
-                                                    <option>CRDB</option>
-                                                    <option>DTB</option>
-                                                    <option>EXIM</option>
-                                                    <option>NBC</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-4 no-pr">
-                                        <div class="form-group">
-                                            <label class="form-label">BRANCH NAME</label>
-                                            <div class="controls">
-                                                 <input  class="form-control" id="field-12" placeholder=" " name="branch">
-                                            </div>
-                                        </div>
-                                    </div>
-                                 
-                                    <div class="col-lg-4 no-pr">
-                                        <div class="form-group">
-                                            <label class="form-label">ACCOUNT NUMBER</label>
-                                            <div class="controls">
-                                                 <input  class="form-control" id="field-12" placeholder=" " name="account">
-                                            </div>
-                                        </div>
-                                    </div>
-                             </div>
-                             </div>
-                            
-                            
-                            <div class="row">
-                             <div class="col-xs-5">
-                             <input onchange="this.setCustomValidity(validity.valueMissing ? 'Please indicate that you accept the Terms and Conditions' : '');" id="field_terms" type="checkbox" required name="terms"> I accept the Terms and Conditions.                                    
-                            </div>
-                              
-                                    <div class="pull-right">
-                                        <button class="btn btn-primary mt-10 btn-corner right-15">Sign up</button>
-                                        <a href="<?php echo base_url(LOGIN_PAGE)?>" class="btn mt-10 btn-corner signup">Login</a>
-                                    </div>
-                                 </div> 
-                                </div>
-                            </div>
-                        </form>
-                        
-<script type="text/javascript">
-  document.getElementById("field_terms").setCustomValidity("Please indicate that you accept the Terms and Conditions");
-</script>
-                        
-                </div>
-                </div>
-
-
-            </div>
+<body class="skin-default card-no-border">
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">HisaZangu | Virtual Market</p>
         </div>
     </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <section id="wrapper" class="step-register">
+        <div class="register-box">
+            <div class="">
+                
+                <!-- multistep form -->
+               
+                    <div class="col-lg-12">
+                        <div class="card">
+                           
+                            <div class="card-body">
+                               <?php
+                                      echo form_open(base_url('app/register'));
+                                ?> 
+                                    <div class="form-body">
+                                        <center> <h4 class="card-title">SIGN UP FORM</h4></center>
+                                        <?php 
+                                        if(isset($errors)){?>
+                                              <div class="alert alert-danger">
+                                              <?php print_r($errors); ?>
+                                              </div>
+                                        <?php }
+                                        
+                                        else{?>
+                                              <div class="alert alert-success">
+                                              <?php print_r($success); ?>
+                                              </div>
+                                       <?php };?> 
+                                        <hr>
 
-    <!-- MAIN CONTENT AREA ENDS -->
-   
-</div>    
+                                        <div class="row p-t-20">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label"></label>
+                                                    <input type="text" value="<?php echo set_value('firstname');?>" name="firstname" maxlength="30" class="form-control" placeholder="First name">
+                                                 </div>
+                                            </div>
+                                            <!--/span-->
+                                               <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label"></label>
+                                                    <input type="text" name="middlename" maxlength="30" class="form-control" placeholder="Middle name">
+                                                 </div>
+                                            </div>
 
+                                              <div class="col-md-4">
+                                               
+                                                  <div class="form-group">
+                                                    <label class="control-label"></label>
+                                                    <input type="text" name="lastname" maxlength="30" class="form-control" placeholder="Last name">
+                                                 </div>
+
+                                            </div>
+                                                <div class="col-md-12">
+                                           
+                                              <div class="form-group">
+                                                    <label></label>
+                                                    <input type="text" class="form-control" placeholder="Enter Physical Address" name="address_primary" maxlength="250">
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <!--/row-->
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                               
+                                                  <div class="form-group">
+                                                    <label class="control-label"></label>
+                                                    <input type="text" name="occupation" maxlength="30" class="form-control" placeholder="Occupation">
+                                                  </div>
+
+                                            </div>
+
+                                        
+                                            <div class="col-md-4">
+                                               
+                                            <div class="form-group">
+                                                    <label class="control-label"></label>
+                                                    <input type="text" name="phonenumber" maxlength="30" class="form-control" placeholder="Phone Number">
+                                                 </div>
+
+                                            </div>
+                                          
+                                                
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label"></label>
+                                                    <select class="form-control custom-select" name="nationality" data-placeholder="Choose a Category" tabindex="1">
+                                                        <option>Nationality</option>
+                                                        <option value="Category 1">Tanzania</option>
+                                                        <option value="Category 2">Kenya</option>
+                                                        <option value="Category 3">Uganda</option>
+                                                     
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                              </div>
+
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                               
+                                                  <div class="form-group">
+                                                    <label class="control-label"></label>
+                                                    <input type="text" name="account" maxlength="30" class="form-control" placeholder="Bank account Number:">
+                                                 </div>
+
+                                            </div>
+                                            <!--/span-->
+                                            <div class="col-md-4">
+                                               
+                                                <div class="form-group">
+                                                    <label class="control-label"></label>
+                                                    <select class="form-control custom-select" name="bank" data-placeholder="Choose a Category" tabindex="1">
+                                                        <option>Select Bank name</option>
+                                                        <option value="Category 1">AKIBA</option>
+                                                        <option value="Category 2">CRDB</option>
+                                                        <option value="Category 3">NBC</option>
+                                                     
+                                                    </select>
+                                                </div>
+
+                                            </div>
+                                              <div class="col-md-4">
+                                               
+                                            <div class="form-group">
+                                                    <label class="control-label"></label>
+                                                    <input type="text" name="branch" maxlength="30" class="form-control" placeholder="Branch name">
+                                                 </div>
+
+                                            </div>
+                                            <!--/span-->
+                                        </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                    <div class="form-group">
+                                 <label class="control-label"></label>
+                                 <select class="form-control custom-select" name="idtype" data-placeholder="Choose a Category" tabindex="1">
+                                         <option>Identity type</option>
+                                         <option value="Category 1">Passport</option>
+                                         <option value="Category 2">National ID</option>
+                                         <option value="Category 3">Driving Licence</option>
+                                 
+                                    </select>
+                                                </div>
+                                            </div>
+                                            <!--/span-->
+                                            <div class="col-md-4">
+                                               
+                                                    <div class="form-group">
+                                                    <label class="control-label"></label>
+                                                    <input type="text" name="idnumber" maxlength="30" class="form-control" placeholder="Identity number">
+                                                    </div>
+
+                                            </div>
+                                             <div class="col-md-4">
+                                               
+                                                    <div class="form-group">
+                                                    <label class="control-label"></label>
+                                                    <input type="email" name="email" maxlength="30" class="form-control" placeholder="Email">
+                                                    </div>
+
+                                            </div>
+                                              
+                                 
+                                            <!--/span-->
+                                        </div>
+                                        
+                                          <div class="row">
+                                            <div class="col-md-4">
+                                               
+                                                    <div class="form-group">
+                                                    <label class="control-label"></label>
+                                                    <input type="text" name="username" maxlength="30" class="form-control" placeholder="Username">
+                                                    </div>
+
+                                            </div>
+
+                                        
+                                            <div class="col-md-4">
+                                               
+                                            <div class="form-group">
+                                                    <label class="control-label"></label>
+                                                    <input type="password" name="passwd" maxlength="30" class="form-control" placeholder="Password">
+                                                 </div>
+
+                                            </div>
+                                          
+                                            <div class="col-md-4">
+                                               
+                                            <div class="form-group">
+                                                    <label class="control-label"></label>
+                                                    <input type="password" name="cpasswd" maxlength="30" class="form-control" placeholder="Confirm password">
+                                                 </div>
+
+                                            </div>
+                                                
+                                       
+
+                                              </div>
+
+                                         <div class="form-group">
+                                            <div class="checkbox checkbox-success">
+                                                <input id="checkbox1" type="checkbox" name="agreebox">
+                                                <label for="checkbox1">Accept terms and conditions</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-actions">
+                                        <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i>Register</button>
+                                        <a href="<?php echo base_url();?>login" class="btn btn-info">Back to Login</a>
+                                    </div>
+
+                                    </div>
+                                    
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                
+                
+                
+                
+                
+                <div class="clear"></div>
+            </div>
+        </div>
+    </section>
+  
