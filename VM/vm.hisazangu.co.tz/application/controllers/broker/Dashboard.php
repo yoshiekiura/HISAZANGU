@@ -9,7 +9,8 @@
 /**
  * Description of Dashboard
  *
- * @author test
+ * @author Sarah
+ * Class Dashboard for broker's role
  */
 class Dashboard extends MY_Controller{
     
@@ -24,11 +25,14 @@ class Dashboard extends MY_Controller{
             
     }
     
-    public function index()
-    {
-        $this->load->view('broker/top_bar');
-        $this->load->view('broker/side_bar');
+    public function index() {
+//        this function is used to call the broker's dashboard after login
+        $pdata = array(
+        'title' => 'HisaZangu | Dashboard'
+        );
+        $this->load->view('broker/hor_view',$pdata);
+        $this->load->view('broker/ver_view');
         $this->load->view('broker/dashboard');
-        $this->load->view('broker/footer');
+        $this->load->view('broker/footer_view');
     }
 }

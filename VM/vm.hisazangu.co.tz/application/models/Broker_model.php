@@ -7,9 +7,9 @@
  */
 
 /**
- * Description of Admin_model
+ * Description of Broker_model
  *
- * @author test
+ * @author Sarah Daniel
  */
 class Broker_model extends Auth_model {
     

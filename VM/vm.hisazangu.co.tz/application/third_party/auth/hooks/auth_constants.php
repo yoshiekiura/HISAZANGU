@@ -14,7 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  */
 
 function auth_constants(){
- 
+
 /*
 | -----------------------------------------------------------------
 | USE_SSL
@@ -24,7 +24,7 @@ function auth_constants(){
 | 
 */
 
-	define('USE_SSL', 0);
+	define('USE_SSL', 1);
 
 /*
 | -----------------------------------------------------------------
@@ -66,4 +66,4 @@ function auth_constants(){
 }
 
 /* End of file auth_constants.php */
-/* Location: /auth/hooks/constants.php */
+/* Location: /community_auth/hooks/constants.php */

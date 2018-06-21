@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  */
 
 class MY_Model extends CI_Model
-{ 
+{
 	/**
 	 * ACL for a logged in user
 	 * @var mixed
@@ -160,4 +160,4 @@ class MY_Model extends CI_Model
 }
 
 /* End of file MY_Model.php */
-/* Location: /auth/core/MY_Model.php */
+/* Location: /community_auth/core/MY_Model.php */

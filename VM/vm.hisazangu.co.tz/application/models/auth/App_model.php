@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @author      Robert B Gottier
  * @copyright   Copyright (c) 2011 - 2018, Robert B Gottier. (http://brianswebdesign.com/)
  * @license     BSD - http://www.opensource.org/licenses/BSD-3-Clause
- * @link        http://auth.com
+ * @link        http://community-auth.com
  */
 
 class App_model extends MY_Model {
@@ -201,4 +201,4 @@ class App_model extends MY_Model {
 }
 
 /* End of file Examples_model.php */
-/* Location: /community_auth/models/examples/Examples_model.php */
+/* Location: /community_auth/models/auth/Examples_model.php */

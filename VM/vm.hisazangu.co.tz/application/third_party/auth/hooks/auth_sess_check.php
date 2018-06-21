@@ -14,7 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  */
 
 function auth_sess_check(){
- 
+
 	$CI =& get_instance();
 
 	// Ensure authentication is loaded
@@ -35,4 +35,4 @@ function auth_sess_check(){
 }
 
 /* End of file auth_sess_check.php */
-/* Location: /auth/hooks/auth_sess_check.php */
+/* Location: /community_auth/hooks/auth_sess_check.php */

@@ -27,17 +27,17 @@ class Profile extends MY_Controller {
      
      public function index()
         {
-            $this->load->view('admin/top_bar');
-            $this->load->view('admin/side_bar');
+            $this->load->view('admin/hor_view');
+            $this->load->view('admin/ver_view');
             $this->load->view('admin/profile');
-            $this->load->view('admin/footer');
+            $this->load->view('admin/footer_view');
         }
         
         public function settings()
         {       
-            $this->load->view('admin/top_bar');
-            $this->load->view('admin/side_bar');
+            $this->load->view('admin/hor_view');
+            $this->load->view('admin/ver_view');
             $this->load->view('admin/profile_settings');
-            $this->load->view('admin/footer');
+            $this->load->view('admin/footer_view');
         }
 }
