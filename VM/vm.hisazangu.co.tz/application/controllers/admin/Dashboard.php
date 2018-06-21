@@ -9,7 +9,7 @@
 /**
  * Description of Dashboard
  *
- * @author test
+ * @author Sarah Daniel
  */
 class Dashboard extends MY_Controller{
     
