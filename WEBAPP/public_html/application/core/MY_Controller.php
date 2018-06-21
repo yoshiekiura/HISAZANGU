@@ -25,10 +25,10 @@ class MY_Controller extends Auth_Controller
         public function __construct()
 	{
 		parent::__construct();
-                $this->_profile_data();
+                $this->profile_data();
 	}
         
-        private function _profile_data() {
+        public function profile_data() {
             $this->is_logged_in();
             // load profile data form controllers
             $this->profile_data = $this->my_auth_model->_get_profile_data( $this->auth_user_id );
