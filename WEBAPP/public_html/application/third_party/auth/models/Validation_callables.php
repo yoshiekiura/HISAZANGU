@@ -22,7 +22,7 @@ class Validation_callables extends MY_Model {
 	{
 		parent::__construct();
 
-		$this->config->load('auth/password_strength');
+		$this->config->load('examples/password_strength');
 	}
 	
 	// -----------------------------------------------------------------------
@@ -103,4 +103,4 @@ class Validation_callables extends MY_Model {
 }
 
 /* End of file Validaton_callables.php */
-/* Location: /community_auth/models/auth/Validation_callables.php */
+/* Location: /community_auth/models/examples/Validation_callables.php */

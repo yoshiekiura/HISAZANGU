@@ -1,6 +1,18 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/**
+ * Community Auth - Form Validation Rules for Login
+ *
+ * Community Auth is an open source authentication application for CodeIgniter 3
+ *
+ * @package     Community Auth
+ * @author      Robert B Gottier
+ * @copyright   Copyright (c) 2011 - 2018, Robert B Gottier. (http://brianswebdesign.com/)
+ * @license     BSD - http://www.opensource.org/licenses/BSD-3-Clause
+ * @link        http://community-auth.com
+ */
+
 // CI not normally available in config files
 $CI =& get_instance();
 
@@ -29,4 +41,4 @@ $config['login_rules'] = [
 ];
 
 /* End of file login.php */
-/* Location: /community_auth/config/form_validation/auth/login.php */
+/* Location: /community_auth/config/form_validation/examples/login.php */
