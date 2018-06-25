@@ -26,6 +26,8 @@ class App extends My_Controller
     public function login()
 	{
 		// Method should not be directly accessible
+            if($this->is_logged_in())
+                redirect (base_url($this->auth_role.'/dashboard'));
 		if( $this->uri->uri_string() == 'app/login')
 			show_404();
 

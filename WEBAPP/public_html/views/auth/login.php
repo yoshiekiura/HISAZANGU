@@ -28,10 +28,7 @@ if( ! isset( $on_hold_message ) )
 	{
 		echo '
 			<div class="alert alert-danger">
-				<p>
 					Invalid Username, Email Address, or Password.
-				</p>
-			
 			</div>
 		';
 	}

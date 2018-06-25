@@ -8,7 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  *
  * @package     Community Auth
  * @author      Robert B Gottier
- * @copyright   Copyright (c) 2011 - 2018, Robert B Gottier. (http://brianswebdesign.com/)
+ * @copyright   Copyright (c) 2011 - 2017, Robert B Gottier. (http://brianswebdesign.com/)
  * @license     BSD - http://www.opensource.org/licenses/BSD-3-Clause
  * @link        http://community-auth.com
  *
@@ -160,4 +160,4 @@ class MY_Model extends CI_Model
 }
 
 /* End of file MY_Model.php */
-/* Location: /auth/core/MY_Model.php */
+/* Location: /community_auth/core/MY_Model.php */

@@ -141,7 +141,7 @@ class Auth_Controller extends CI_Controller {
 	 */
 	protected function _load_dependencies()
 	{
-		$this->load->add_package_path(APPPATH . 'third_party/community_auth/');
+		$this->load->add_package_path(APPPATH . 'third_party/auth/');
 		$this->load->database();
 		$this->config->load('db_tables');
 		$this->config->load('authentication');
